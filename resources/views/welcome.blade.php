@@ -123,7 +123,7 @@
             <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
                 data-carousel-slide-to="1"></button>
             <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                data-carousel-slide-to="2"></button>\
+                data-carousel-slide-to="2"></button>
             {{--
             <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
                 data-carousel-slide-to="3"></button>
@@ -336,32 +336,31 @@
 
             </div>
         </div>
-        <div>
-            <div class="absolute pointer-events-none top-0 left-0 h-full w-[20px] sm:w-[50px] md:w-[100px] lg:w-[100px] bg-gradient-to-r from-white via-white dark:from-black to-transparent z-[1]"
-                data-v-1413e9b7=""></div>
-            <div class="mt-8 marquee3k" data-reverse="true">
-                <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 "
-                    data-speed="2.25">
 
-                    <div class="flex items-center">
-                        {{-- <img class="h-16" src="images/logo/bri.png" alt="BRI">
+
+        <div class="mt-8 marquee3k" data-reverse="true">
+            <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 "
+                data-speed="2.25">
+
+                <div class="flex items-center">
+                    {{-- <img class="h-16" src="images/logo/bri.png" alt="BRI">
                     <img class="h-16" src="images/logo/mandiri2.png" alt="mandiri">
                     <img class="h-16" src="images/logo/btn2.png" alt="btn">
                     <img class="h-16" src="images/logo/bni.png" alt="bni">
                     <img class="h-16" src="images/logo/mega.png" alt="mega"> --}}
-                        <img class="h-16 grayscale hover:grayscale-0" src="images/logo/permata.png" alt="permata">
-                        <img class="h-16 grayscale hover:grayscale-0" src="images/logo/uob.png" alt="uob">
-                        <img class="h-16 grayscale hover:grayscale-0" src="images/logo/qnb.png" alt="qnb">
-                        <img class="h-16 grayscale hover:grayscale-0" src="images/logo/bca.png" alt="bca">
-                        <img class="h-16 grayscale hover:grayscale-0" src="images/logo/bankdki.png" alt="bank dki">
-
-                    </div>
+                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/permata.png" alt="permata">
+                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/uob.png" alt="uob">
+                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/qnb.png" alt="qnb">
+                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/bca.png" alt="bca">
+                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/bankdki.png" alt="bank dki">
 
                 </div>
+
             </div>
         </div>
-
     </div>
+
+
 
 
 
