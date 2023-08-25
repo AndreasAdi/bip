@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.marquee3k__copy {
+    padding-right: 30px;
+    box-sizing: border-box;
+}
