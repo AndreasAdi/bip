@@ -18,7 +18,7 @@
     <main>
         <div class="px-10 mt-5 ">
             <h1 class="mt-5 mb-3 text-2xl font-semibold text-center">Banking Equipment</h1>
-
+            <div class="w-1/5 h-2 mx-auto rounded-lg s bg-gradient-to-tr from-bip-orange-400 to-bip-orange-600"></div>
             <div class="flex w-full mt-5 lg:px-32">
                 <a href="/pdf/katalog-banking.pdf" download="Katalong Banking Equipment"
                     class="inline-flex px-6 py-3 ml-auto font-bold text-white rounded-full bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500 hover:bg-gradient-to-brhover:from-bip-orange-400 hover:to-bip-orange-300">

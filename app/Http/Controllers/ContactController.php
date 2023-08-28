@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Pesan;
 
 class ContactController extends Controller
 {
+
+
+    function index()
+    {
+        $pesan = Pesan::paginate(5);
+        return view('dashboard', compact('pesan'));
+    }
+
+
 
     function handleKirimPesan(Request $request)
     {

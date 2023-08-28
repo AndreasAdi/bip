@@ -8,11 +8,7 @@
             </a>
             <div class="flex md:order-2">
                 <button type="button"
-                    class="hidden px-6 py-2 mr-3 font-bold text-center text-white rounded-full
-                    bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500 hover:bg-gradient-to-br
-                     hover:from-bip-orange-400 hover:to-bip-orange-300 focus:ring-4 focus:outline-none
-                     focus:ring-orange-300 text-md md:mr-0 dark:bg-orange-600 dark:hover:bg-orange-700
-                     dark:focus:ring-orange-800 md:block">Karir</button>
+                    class="hidden px-6 py-2 mr-3 font-bold text-center text-white rounded-full bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500 hover:bg-gradient-to-br hover:from-bip-orange-400 hover:to-bip-orange-300 focus:ring-4 focus:outline-none focus:ring-orange-300 text-md md:mr-0 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800 md:block">Karir</button>
                 <a href="/contact"
                     class="hidden px-6 py-2 ml-3 mr-3 font-bold text-center text-white rounded-full bg-gradient-to-tr from-bip-blue-500 to-bip-blue-700 hover:bg-gradient-to-br hover:from-bip-blue-400 hover:to-bip-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 text-md md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:block">Hubungi
                     Kami</a>
@@ -51,11 +47,12 @@
                                         Perusahan</a>
                                 </li>
                                 <li>
-                                    <a href="#"
-                                        class="block w-full px-12 py-2 md:px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white md:w-fit">Manajemen</a>
+                                    <a href="/ceo-statement"
+                                        class="block w-full px-12 py-2 md:px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white md:w-fit">CEO
+                                        Statement</a>
                                 </li>
                                 <li>
-                                    <a href="#"
+                                    <a href="/penghargaan"
                                         class="block w-full px-12 py-2 md:px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white md:w-fit">Penghargaan</a>
                                 </li>
                             </ul>

@@ -2,7 +2,6 @@
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto ">
             <a href="#" class="flex items-center">
                 <img src="/images/logobip.webp" class="h-8 mr-3" alt="Flowbite Logo" />
-
                 <span class="self-center text-2xl font-semibold whitespace-nowrap">Bismacindo
                 </span>
             </a>
@@ -23,11 +22,9 @@
                     </svg>
                 </button>
             </div>
-
             <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                 <ul
                     class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-
                     <li>
                         <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1"
                             class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-semibold rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-bip-orange-400 md:p-0 md:w-auto dark:text-white md:dark:hover:text-orange-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Perusahaan
@@ -47,11 +44,12 @@
                                         Perusahan</a>
                                 </li>
                                 <li>
-                                    <a href=""
-                                        class="block w-full px-12 py-2 md:px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white md:w-fit">Manajemen</a>
+                                    <a href="/ceo-statement"
+                                        class="block w-full px-12 py-2 md:px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white md:w-fit">CEO
+                                        Statement</a>
                                 </li>
                                 <li>
-                                    <a href="#"
+                                    <a href="/penghargaan"
                                         class="block w-full px-12 py-2 md:px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white md:w-fit">Penghargaan</a>
                                 </li>
                             </ul>

@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BankingController;
 use App\Http\Controllers\ItController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,15 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
+Route::get('ceo-statement', function () {
+    return view('ceo-statement');
+});
+
+Route::get('penghargaan', function () {
+    return view('penghargaan');
+});
+
+
 Route::get('/banking', [BankingController::class, 'index']);
 
 Route::get('/banking/1', [BankingController::class, 'detail']);
@@ -44,10 +54,16 @@ Route::post('kirimpesan', [ContactController::class, 'handleKirimPesan'])->name(
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+
+Route::get('/dashboard', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/admin/product/insert', [ProductController::class, 'insert']);
+
+    // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 require __DIR__ . '/auth.php';
