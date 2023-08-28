@@ -51,10 +51,20 @@
 
                 <textarea id="deskripsi" name="description"></textarea>
             </div>
+            <div class="mb-6">
+                <label for="video" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video
+                    Produk</label>
+                <input type="text" id="video"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Masukkan Link Youtube " name="video" required>
+            </div>
+
 
             <div class="mb-6">
+                <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar
+                    Product</label>
                 <input type="file" multiple data-allow-reorder="true" data-max-file-size="3MB"
-                    data-max-files="5"class="filepond" name="image">
+                    data-max-files="5"class="filepond" name="image" id="image">
             </div>
 
 
@@ -147,7 +157,8 @@
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     }
-                }
+                },
+
             });
 
             function deleteImage(nameFile) {

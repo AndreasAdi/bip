@@ -3,7 +3,7 @@
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="https://bismacindo.co.id" class="flex items-center">
-                    <img src="images/logobip.webp" class="h-8 mr-3" alt="FlowBite Logo" />
+                    <img src="/images/logobip.webp" class="h-8 mr-3" alt="FlowBite Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">PT.
                         Bismacindo
                         Perkasa</span>

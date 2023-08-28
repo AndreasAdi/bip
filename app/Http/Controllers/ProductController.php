@@ -47,6 +47,7 @@ class ProductController extends Controller
         $newProduct->status = "1";
 
         $newProduct->image = 'public/product/image/';
+        $newProduct->video = $request->input('video');
         $tempFolder = Session::get('folder');
         $tempImage = Session::get('filename');
 
@@ -69,7 +70,7 @@ class ProductController extends Controller
                     $ext = explode('.', $temporary->image);
                     $ext = end($ext);
                     try {
-                        Storage::move('files/tmp/' . $temporary->folder . '/' . $temporary->image, $newPath . '/' . $i . '.' . $ext);
+                        Storage::move('files/tmp/' . $temporary->folder . '/' . $temporary->image, $newPath . '/' . $i + 1 . '.' . $ext);
                     } catch (\Exception $e) {
                         echo $e->getMessage();
                     }
@@ -87,5 +88,10 @@ class ProductController extends Controller
 
         $newProduct->image = 'public/product/image/' . $newProduct->id;
         $newProduct->save();
+
+        Session::forget('folder');
+        Session::forget('filename');
+
+        return redirect()->route('dashboard')->with('success', 'Data berhasil ditambahkan');
     }
 }

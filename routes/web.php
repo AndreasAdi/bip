@@ -44,7 +44,7 @@ Route::get('penghargaan', function () {
 
 Route::get('/banking', [BankingController::class, 'index']);
 
-Route::get('/banking/1', [BankingController::class, 'detail']);
+Route::get('/banking/{id}', [BankingController::class, 'detail']);
 
 Route::get('/it', [ItController::class, 'index']);
 Route::get('/it/1', [ItController::class, 'detail']);

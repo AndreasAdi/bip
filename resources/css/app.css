@@ -6,3 +6,9 @@
     padding-right: 30px;
     box-sizing: border-box;
 }
+
+/* the background color of the filepond drop area */
+.filepond--panel-root {
+    @apply bg-gray-200;
+    @apply border-2;
+}

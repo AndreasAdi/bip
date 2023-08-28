@@ -42,7 +42,8 @@ class UploadController extends Controller
                 rmdir(storage_path('app/files/tmp/' . $db->folder));
 
                 $db->delete();
-
+                Session::forget('folder');
+                Session::forget('filename');
                 return 'deleted';
             } else {
                 return 'not found';

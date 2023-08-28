@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BankingController extends Controller
 {
@@ -10,11 +12,13 @@ class BankingController extends Controller
 
     function index()
     {
-        return view('banking.index');
+        $data = Product::where('category', 1)->get();
+        return view('banking.index', compact('data'));
     }
 
-    function detail()
+    function detail(string $id)
     {
-        return view('banking.detail');
+        $data = Product::where('id', $id)->first();
+        return view('banking.detail', compact('data'));
     }
 }
