@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\TemporaryImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -27,7 +31,7 @@ class ProductController extends Controller
             'category' => 'required',
             'description' => 'required',
             'image' => 'required',
-            'status' => 'required',
+
         ]);
 
         if (!$request) {
@@ -36,22 +40,52 @@ class ProductController extends Controller
 
 
         $newProduct = new Product();
-        $newProduct->nama = $request->input('name');
+        $newProduct->name = $request->input('name');
         $newProduct->brand = $request->input('brand');
-        $newProduct->kategori = $request->input('category');
-        $newProduct->deskripsi = $request->input('description');
-        $newProduct->status = $request->input('status');
+        $newProduct->category = $request->input('category');
+        $newProduct->description = $request->input('description');
+        $newProduct->status = "1";
 
-        // upload file (This is temporary code)
-        // will discuss more about uploading file later
-        // either fixed number of image or dynamic number of image
-        $file = $request->file('image');
-        $fileName = $file->getClientOriginalName();
-        $request->file('image')->move('images/', $fileName);
-        $newProduct->gambar = $fileName;
+        $newProduct->image = 'public/product/image/';
+        $tempFolder = Session::get('folder');
+        $tempImage = Session::get('filename');
+
+        $newProduct->save();
+
+        for ($i = 0; $i < count($tempFolder); $i++) {
+            $temporary = TemporaryImage::where('folder', $tempFolder[$i])->where('image', $tempImage[$i])->first();
+
+            if ($temporary) { //if exist
+
+                //hapus file and folder temporary
+                $path = storage_path() . '/app/files/tmp/' . $temporary->folder . '/' . $temporary->image;
+                if (File::exists($path)) {
+
+                    //move file to storage/public/product/image/id
+                    $newPath = 'public/product/image/' . $newProduct->id;
 
 
+                    //move file
+                    $ext = explode('.', $temporary->image);
+                    $ext = end($ext);
+                    try {
+                        Storage::move('files/tmp/' . $temporary->folder . '/' . $temporary->image, $newPath . '/' . $i . '.' . $ext);
+                    } catch (\Exception $e) {
+                        echo $e->getMessage();
+                    }
 
+
+                    //delete folder temporary
+                    File::delete($path);
+                    rmdir(storage_path('app/files/tmp/' . $temporary->folder));
+
+                    //delete record in temporary table
+                    $temporary->delete();
+                }
+            }
+        }
+
+        $newProduct->image = 'public/product/image/' . $newProduct->id;
         $newProduct->save();
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BankingController;
 use App\Http\Controllers\ItController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +51,11 @@ Route::get('/it/1', [ItController::class, 'detail']);
 
 Route::post('kirimpesan', [ContactController::class, 'handleKirimPesan'])->name('kirim.pesan');
 
+Route::controller(UploadController::class)->group(function () {
+    Route::post('/upload', 'store')->name('upload');
+    Route::delete('/hapus', 'destroy')->name('hapus');
+});
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -60,6 +66,7 @@ Route::get('/dashboard', [ContactController::class, 'index'])->middleware(['auth
 Route::middleware('auth')->group(function () {
 
     Route::get('/admin/product/insert', [ProductController::class, 'insert']);
+    Route::post('/admin/product/insert', [ProductController::class, 'prosesInsert']);
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
