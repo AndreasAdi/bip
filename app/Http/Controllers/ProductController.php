@@ -226,4 +226,41 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', 'Gambar berhasil dihapus');
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+
+        $product = Product::where('name', 'like', '%' . $query . '%')->paginate(5);
+
+        $html = '';
+        if (count($product) == 0) {
+            $html .= '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">';
+            $html .= '<th colspan="4" scope="row" class="px-6 py-16 font-medium text-center text-gray-600 whitespace-nowrap dark:text-white">Product Tidak Ditemukan</th>';
+            $html .= '</tr>';
+        }
+
+        foreach ($product as $key => $value) {
+            $files = Storage::files('public/product/image/' . $value->id);
+        }
+
+
+
+        //return html
+        foreach ($product as $key => $value) {
+            $html .= '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">';
+            $html .= '<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">' . $value->name . '</th>';
+            $html .= '<td class="px-6 py-4 text-gray-500 whitespace-nowrap dark:text-gray-300">' . $value->getBrand->name . '</td>';
+            $html .= '<td class="px-6 py-4 text-gray-500 whitespace-nowrap dark:text-gray-300">' . $value->getCategory->name . '</td>';
+            $html .= ' <td class="px-6 py-4 text-sm font-medium">';
+            $html .= ' <a href="/admin/product/edit/' . $value->id;
+            $html .= '" class="pr-2 text-blue-600 hover:text-blue-500">Edit</a>
+                                           <button onclick="deleteProduct(' . $value->id . ')"';
+            $html .= 'class="text-red-600 hover:text-red-500">Delete</button>
+                                        </td></tr>';
+        }
+
+        return $html;
+    }
 }

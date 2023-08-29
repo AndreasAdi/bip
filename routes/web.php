@@ -71,6 +71,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/product/insert', [ProductController::class, 'prosesInsert']);
     Route::get('/admin/product/edit/{id}', [ProductController::class, 'edit']);
     Route::post('/admin/product/edit', [ProductController::class, 'update']);
+    Route::post('admin/product/search', [ProductController::class, 'search']);
     Route::get('admin/product', [ProductController::class, 'index'])->name('product');
     Route::get('/admin/product/delete/{id}', [ProductController::class, 'delete']);
     Route::get('/admin/product/delete/image/{id}/{number}', [ProductController::class, 'deleteImage']);
