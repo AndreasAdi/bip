@@ -2,19 +2,21 @@
 
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Tambah Produk') }}
+            {{ __('Edit Produk') }}
         </h2>
     </x-slot>
+    <x-toast />
 
     <div class="max-w-3xl px-2 py-16 mx-auto md-px-32">
-        <form action="/admin/product/insert" method="POST">
+        <form action="/admin/product/edit" method="POST">
             @csrf
+            <input type="hidden" name="id" value="{{ $product->id }}">
             <div class="mb-6">
                 <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
                     Produk</label>
                 <input type="text" id="nama"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Nama Produk" name="name" required>
+                    placeholder="Nama Produk" name="name" required value="{{ $product->name }}">
             </div>
             <div class="mb-6">
                 <label for="kategori"
@@ -23,11 +25,11 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     name="category">
 
-                    <option value="1">Banking</option>
-                    <option value="2">IT</option>
-                    <option value="3">Office</option>
-                    <option value="4">Machine</option>
-                    <option value="5">Certification</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" @if ($product->category == $category->id) selected @endif>
+                            {{ $category->name }}</option>
+                    @endforeach
+
                 </select>
             </div>
 
@@ -36,9 +38,9 @@
                 <select id="brand"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     name="brand">
-
-                    @foreach ($brands as $item)
-                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @foreach ($brands as $brand)
+                        <option value="{{ $brand->id }}" @if ($product->brand == $brand->id) selected @endif>
+                            {{ $brand->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -47,14 +49,14 @@
                 <label for="deskripsi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
                     Product</label>
 
-                <textarea id="deskripsi" name="description"></textarea>
+                <textarea id="deskripsi" name="description">{{ $product->description }}</textarea>
             </div>
             <div class="mb-6">
                 <label for="video" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video
                     Produk</label>
                 <input type="text" id="video"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Masukkan Link Youtube " name="video" required>
+                    placeholder="Masukkan Link Youtube " name="video" required value="{{ $product->video }}">
             </div>
 
 
@@ -64,10 +66,18 @@
                 <input type="file" multiple data-allow-reorder="true" data-max-file-size="3MB"
                     data-max-files="5"class="filepond" name="image" id="image">
             </div>
-
+            <div class="flex gap-2 mb-6">
+                @foreach ($images as $image)
+                    <div class="flex flex-col">
+                        <img src="{{ $image }}" alt="" class="w-64 h-64" />
+                        <a class="w-full py-1 text-center text-white bg-red-500 rounded-b-md"
+                            href="/admin/product/delete/image/{{ $product->id . '/' . $loop->index }}">Hapus</a>
+                    </div>
+                @endforeach
+            </div>
 
             <x-primary-button class="w-full">
-                {{ __('Tambah Produk') }}
+                {{ __('Update Product') }}
             </x-primary-button>
 
         </form>
@@ -169,11 +179,9 @@
                     data: {
                         image: nameFile
                     },
-                    success: function(response) {
-                        console.log(response);
-                    },
+                    success: function(response) {},
                     error: function(response) {
-                        console.log('error')
+
                     }
                 });
             }

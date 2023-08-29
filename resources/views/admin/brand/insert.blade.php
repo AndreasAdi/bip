@@ -7,72 +7,56 @@
     </x-slot>
 
     <div class="max-w-3xl px-2 py-16 mx-auto md-px-32">
-        <form action="/admin/product/insert" method="POST">
+        <form action="/admin/brand/insert" method="POST">
             @csrf
             <div class="mb-6">
                 <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
-                    Produk</label>
+                    Brand</label>
                 <input type="text" id="nama"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Nama Produk" name="name" required>
+                    placeholder="Nama Brand" name="name" required>
             </div>
             <div class="mb-6">
-                <label for="kategori"
+                <label for="category"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
-                <select id="kategori"
+                <select id="category"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    name="category">
+                    name="category[]" multiple>
 
                     <option value="1">Banking</option>
                     <option value="2">IT</option>
                     <option value="3">Office</option>
                     <option value="4">Machine</option>
                     <option value="5">Certification</option>
-                </select>
-            </div>
 
-            <div class="mb-6">
-                <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
-                <select id="brand"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    name="brand">
-
-                    @foreach ($brands as $item)
-                        <option value="{{ $item->id }}">{{ $item->name }}</option>
-                    @endforeach
                 </select>
             </div>
 
             <div class="mb-6">
                 <label for="deskripsi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
-                    Product</label>
+                    Brand</label>
 
                 <textarea id="deskripsi" name="description"></textarea>
             </div>
-            <div class="mb-6">
-                <label for="video" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video
-                    Produk</label>
-                <input type="text" id="video"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Masukkan Link Youtube " name="video" required>
-            </div>
+
 
 
             <div class="mb-6">
-                <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar
-                    Product</label>
-                <input type="file" multiple data-allow-reorder="true" data-max-file-size="3MB"
-                    data-max-files="5"class="filepond" name="image" id="image">
+                <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Logo
+                    Brand</label>
+                <input type="file" data-allow-reorder="true" data-max-file-size="3MB" class="filepond" name="image"
+                    id="image">
             </div>
 
 
             <x-primary-button class="w-full">
-                {{ __('Tambah Produk') }}
+                {{ __('Tambah Brand') }}
             </x-primary-button>
 
         </form>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/78z4m7tquef9qxfszdbtcrngjsw2ey3t2a52n6wuxx7jby2k/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
@@ -134,11 +118,13 @@
         )
 
 
+
         document.addEventListener('DOMContentLoaded', function() {
+
+            $('#category').select2();
+
             //select the input and turn it into a pond
             FilePond.create(document.querySelector('.filepond'));
-
-
 
             FilePond.setOptions({
                 server: {

@@ -6,10 +6,9 @@
             <div>
                 <div class="grid gap-4">
                     <div>
-                        <img class="h-auto max-w-full p-6 border rounded-lg" src="/images/banking/banking1.webp"
-                            alt="">
+                        <img class="h-auto max-w-full p-6 border rounded-lg" src="{{ $images[1] }}" alt="">
                     </div>
-                    <div class="grid grid-cols-5 gap-4">
+                    {{-- <div class="grid grid-cols-5 gap-4">
                         <div>
                             <img class="h-auto max-w-full p-6 border rounded-lg" src="/images/banking/banking1.webp"
                                 alt="">
@@ -30,7 +29,7 @@
                             <img class="h-auto max-w-full p-6 border rounded-lg" src="/images/banking/banking1.webp"
                                 alt="">
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <!--Youtube Iframe-->

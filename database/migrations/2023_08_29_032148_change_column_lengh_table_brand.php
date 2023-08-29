@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('product', function (Blueprint $table) {
+        Schema::table('brand', function (Blueprint $table) {
 
-            $table->string('description', 2000)->change();
+            $table->string('description', 5000)->change();
         });
     }
 
@@ -22,8 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('product', function (Blueprint $table) {
-
+        Schema::table('brand', function (Blueprint $table) {
             $table->string('description', 255)->change();
         });
     }

@@ -16,7 +16,7 @@
     <x-navbar-solid />
 
     <main>
-        <div class="px-10 mt-5 ">
+        <div class="mt-5 md:px-10 ">
             <h1 class="mt-5 mb-3 text-2xl font-semibold text-center">Banking Equipment</h1>
             <div class="w-1/5 h-2 mx-auto rounded-lg s bg-gradient-to-tr from-bip-orange-400 to-bip-orange-600"></div>
             <div class="flex w-full mt-5 lg:px-32">
@@ -33,14 +33,13 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:px-32 lg:py-16">
-
+            <div class="gap-2 md:flex lg:px-32 lg:py-16">
                 @foreach ($data as $item)
-                    <div class="transition-transform ease-in-out hover:scale-105">
+                    <div class="transition-transform ease-in-out md:w-4/12 hover:scale-105">
                         <figure class="relative">
                             <a href="banking/{{ $item->id }}">
-                                <img class="h-auto max-w-full p-5 rounded-lg"
-                                    src="storage/product/image/{{ $item->id }}/1.webp" alt="">
+                                <img class="h-auto max-w-full p-5 rounded-lg" src="{{ $images[$loop->index][1] }}"
+                                    alt="">
                             </a>
                             <figcaption
                                 class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
