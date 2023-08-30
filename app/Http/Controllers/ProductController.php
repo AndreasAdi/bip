@@ -16,7 +16,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $product = Product::paginate(5);
+        $product = Product::paginate(1);
 
 
         $images = array();
@@ -232,7 +232,7 @@ class ProductController extends Controller
         $query = $request->input('query');
 
 
-        $product = Product::where('name', 'like', '%' . $query . '%')->paginate(5);
+        $product = Product::where('name', 'like', '%' . $query . '%')->paginate(1);
 
         $html = '';
         if (count($product) == 0) {
@@ -261,6 +261,11 @@ class ProductController extends Controller
                                         </td></tr>';
         }
 
-        return $html;
+        return response()->json([
+            'rows' => $html,
+            'links' => $product->links()
+        ], 200);
+
+        // return $html;
     }
 }

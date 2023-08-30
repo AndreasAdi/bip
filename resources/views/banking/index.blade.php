@@ -35,15 +35,15 @@
 
             <div class="gap-2 md:flex lg:px-32 lg:py-16">
                 @foreach ($data as $item)
-                    <div class="transition-transform ease-in-out md:w-4/12 hover:scale-105">
+                    <div class="transition-transform ease-in-out border md:w-4/12 hover:scale-105">
                         <figure class="relative">
                             <a href="banking/{{ $item->id }}">
                                 <img class="h-auto max-w-full p-5 rounded-lg" src="{{ $images[$loop->index][1] }}"
                                     alt="">
                             </a>
                             <figcaption
-                                class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                                <p class="text-xl text-center">{{ $item->name }}</p>
+                                class="absolute bottom-0 w-full px-4 py-1 text-white rounded-b-lg bg-gray-600/80">
+                                <p class="text-center  text-ellipsis">{{ $item->name }}</p>
                             </figcaption>
                         </figure>
                     </div>

@@ -8,9 +8,9 @@ import { PageFlip } from "page-flip";
 
 window.PageFlip = PageFlip;
 
-window.Alpine = Alpine;
+// window.Alpine = Alpine;
 
-Alpine.start();
+// Alpine.start();
 
 // const pageFlip = new PageFlip(document.getElementById("book"), {
 //     width: 400, // required parameter - base page width
