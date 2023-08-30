@@ -44,15 +44,15 @@
             <div class="px-12">
                 <h1 class="text-3xl font-semibold">{{ $data->name }}</h1>
                 <div class="mt-3 mb-5">
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
-                        Banking
+                    <span class="bg-bip-blue-100 text-bip-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
+                        {{ $data->getCategory->name }}
                     </span>
-                    <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
-                        GRG Banking
+                    <span class="bg-bip-orange-100 text-bip-orange-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
+                        {{ $data->getBrand->name }}
                     </span>
-                    <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
+                    {{-- <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
                         Mesin Hitung Uang
-                    </span>
+                    </span> --}}
                 </div>
                 <div>
                     {!! $data->description !!}

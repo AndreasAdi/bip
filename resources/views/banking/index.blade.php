@@ -43,7 +43,7 @@
                             </a>
                             <figcaption
                                 class="absolute bottom-0 w-full px-4 py-1 text-white rounded-b-lg bg-gray-600/80">
-                                <p class="text-center  text-ellipsis">{{ $item->name }}</p>
+                                <p class="text-center text-ellipsis">{{ $item->name }}</p>
                             </figcaption>
                         </figure>
                     </div>
