@@ -78,6 +78,9 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/brand', [BrandController::class, 'index'])->name('brand');
     Route::get('admin/brand/insert', [BrandController::class, 'insert']);
     Route::post('admin/brand/insert', [BrandController::class, 'store']);
+    Route::get('admin/brand/edit/{id}', [BrandController::class, 'edit']);
+    Route::post('admin/brand/edit', [BrandController::class, 'update']);
+    Route::get('admin/brand/delete/{id}', [BrandController::class, 'delete']);
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
