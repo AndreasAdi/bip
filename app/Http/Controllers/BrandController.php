@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Category;
 use App\Models\TemporaryImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -40,7 +41,7 @@ class BrandController extends Controller
         }
 
         $categories = $request->input('category');
-        $category = implode(",", $categories);
+        $category = json_encode($categories);
 
         $newBrand = new Brand();
         $newBrand->name = $request->input('name');
@@ -91,5 +92,60 @@ class BrandController extends Controller
         Session::forget('filename');
 
         return redirect()->route('brand')->with('success', 'Data berhasil ditambahkan');
+    }
+
+    public function edit($id)
+    {
+        $brand = Brand::find($id);
+
+        $categories = Category::all();
+
+        $images = array();
+
+        $files = Storage::files('public/brand/image/' . $brand->id);
+
+        $count = count($files);
+
+
+        for ($i = 1; $i <= $count; $i++) {
+            $images[$i] = Storage::url($files[$i - 1]);
+        }
+
+
+
+        return view('admin.brand.edit', compact('brand', 'categories', 'images'));
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+        ]);
+
+        if (!$request) {
+            return redirect()->back()->with('error', 'Maaf, data gagal ditambahkan');
+        }
+
+        $categories = $request->input('category');
+        $category = json_encode($categories);
+
+        $brand = Brand::find($request->input('id'));
+        $brand->name = $request->input('name');
+        $brand->category_id = $category;
+        $brand->description = $request->input('description');
+
+        $brand->save();
+
+        return redirect()->back()->with('success', 'Data berhasil diubah');
+    }
+
+    public function delete($id)
+    {
+        $brand = Brand::find($id);
+        $brand->delete();
+
+        return redirect()->route('brand')->with('success', 'Data berhasil dihapus');
     }
 }
