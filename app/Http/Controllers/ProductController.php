@@ -163,6 +163,9 @@ class ProductController extends Controller
         $tempImage = Session::get('filename');
 
 
+        if ($tempFolder == null) {
+            return redirect()->back()->with('success', 'Data berhasil diubah');
+        }
 
         for ($i = 0; $i < count($tempFolder); $i++) {
             $temporary = TemporaryImage::where('folder', $tempFolder[$i])->where('image', $tempImage[$i])->first();
