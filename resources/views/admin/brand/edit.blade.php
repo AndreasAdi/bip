@@ -4,17 +4,23 @@
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
             {{ __('Tambah Produk') }}
         </h2>
+
     </x-slot>
 
+    <x-toast />
+
+
     <div class="max-w-3xl px-2 py-16 mx-auto md-px-32">
-        <form action="/admin/brand/insert" method="POST">
+
+        <form action="/admin/brand/edit" method="POST">
             @csrf
+            <input type="hidden" name="id" value="{{ $brand->id }}">
             <div class="mb-6">
                 <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
                     Brand</label>
                 <input type="text" id="nama"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Nama Brand" name="name" required>
+                    placeholder="Nama Brand" name="name" required value="{{ $brand->name }}">
             </div>
             <div class="mb-6">
                 <label for="category"
@@ -36,7 +42,7 @@
                 <label for="deskripsi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
                     Brand</label>
 
-                <textarea id="deskripsi" name="description"></textarea>
+                <textarea id="deskripsi" name="description">{{ $brand->description }}</textarea>
             </div>
 
 
@@ -44,13 +50,24 @@
             <div class="mb-6">
                 <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Logo
                     Brand</label>
-                <input type="file" required data-allow-reorder="true" data-max-file-size="3MB" class="filepond"
-                    name="image" id="image">
+                <input type="file" data-allow-reorder="true" data-max-file-size="3MB" class="filepond" name="image"
+                    id="image">
+            </div>
+
+
+            <div class="flex gap-2 mb-6">
+                @foreach ($images as $image)
+                    <div class="flex flex-col">
+                        <img src="{{ $image }}" alt="" class="w-64 " />
+                        <a class="w-full py-1 text-center text-white bg-red-500 rounded-b-md"
+                            href="/admin/product/delete/image/{{ $brand->id . '/' . $loop->index }}">Hapus</a>
+                    </div>
+                @endforeach
             </div>
 
 
             <x-primary-button class="w-full" id="btn_add">
-                {{ __('Tambah Brand') }}
+                {{ __('Update Brand') }}
             </x-primary-button>
 
         </form>
@@ -122,6 +139,9 @@
         document.addEventListener('DOMContentLoaded', function() {
 
             $('#category').select2();
+
+            $('#category').val({!! $brand->category_id !!});
+            $('#category').trigger('change');
 
             //select the input and turn it into a pond
             FilePond.create(document.querySelector('.filepond'));

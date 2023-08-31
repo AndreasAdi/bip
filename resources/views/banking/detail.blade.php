@@ -2,11 +2,11 @@
     <x-navbar-solid />
 
     <main>
-        <div class="grid grid-cols-1 gap-6 px-5 py-5 md:grid-cols-2 md:gap-12 lg:px-32 lg:py-16">
+        <div class="grid grid-cols-1 gap-6 px-5 py-5 md:grid-cols-2 md:gap-12 lg:px-32 ">
             <div>
                 <div class="grid gap-4">
-                    <div>
-                        <img class="h-auto max-w-full p-6 border rounded-lg" src="{{ $images[1] }}" alt="">
+                    <div class="col-1">
+                        <img class="max-w-lg p-6 border rounded-lg" src="{{ $images[1] }}" alt="">
                     </div>
                     {{-- <div class="grid grid-cols-5 gap-4">
                         <div>
@@ -32,14 +32,6 @@
                     </div> --}}
                 </div>
 
-                <!--Youtube Iframe-->
-                <div class="mt-5 h-96 ">
-                    <iframe width="fit" height="fit" class="w-full h-full" src="{{ $data->video }}"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                </div>
-
             </div>
             <div class="px-12">
                 <h1 class="text-3xl font-semibold">{{ $data->name }}</h1>
@@ -53,14 +45,29 @@
                     {{-- <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
                         Mesin Hitung Uang
                     </span> --}}
+                    <a href="https://wa.me/6285399999538?text={{ $data->name }}"
+                        class="block w-full px-3 py-2 mt-5 text-center text-white rounded-full bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500 hover:bg-gradient-to-brhover:from-bip-orange-400 hover:to-bip-orange-300">
+                        Pesan
+                    </a>
+
+                    <!--Youtube Iframe-->
+                    <div class="h-32 mt-5">
+                        <iframe width="fit" height="fit" class="w-full h-full" src="{{ $data->video }}"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+
                 </div>
-                <div>
-                    {!! $data->description !!}
-                </div>
-                <a href="https://wa.me/6285399999538?text={{ $data->name }}"
-                    class="block w-full px-3 py-2 mt-5 text-center text-white rounded-full bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500 hover:bg-gradient-to-brhover:from-bip-orange-400 hover:to-bip-orange-300">
-                    Pesan
-                </a>
+
+            </div>
+
+        </div>
+        <div class="max-w-screen-xl px-16 md:px-32">
+            <div>
+                {!! $data->description !!}
+
+
             </div>
 
         </div>

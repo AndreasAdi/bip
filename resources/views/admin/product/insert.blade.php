@@ -47,7 +47,7 @@
                 <label for="deskripsi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi
                     Product</label>
 
-                <textarea id="deskripsi" name="description"></textarea>
+                <textarea class="h-96" id="deskripsi" name="description"></textarea>
             </div>
             <div class="mb-6">
                 <label for="video" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Video

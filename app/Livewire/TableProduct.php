@@ -17,7 +17,6 @@ class TableProduct extends Component
 
     public function render()
     {
-
         $product = Product::where('category', 'like', '%' . $this->filterCategory . '%')
             ->where('name', 'like', '%' . $this->search . '%')
             ->paginate(5);

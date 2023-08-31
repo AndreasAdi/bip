@@ -2,13 +2,13 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="">
-                <a href="/admin/product/insert"
+                <a href="/admin/brand/insert"
                     class="inline-flex items-center mb-3 text-white bg-blue-600 border border-transparent focus:outline-none hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <svg class="w-4 h-4 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10 12a2 2 0 100-4 2 2 0 000 4zM3 10a7 7 0 1114 0 7 7 0 01-14 0z">
                         </path>
                     </svg>
-                    <span>Add Product</span>
+                    <span>Add Brand</span>
                 </a>
                 <div class="mt-5 text-gray-900 dark:text-gray-100">
                     <div class="flex items-center justify-between pb-4">
@@ -36,8 +36,21 @@
                                     style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
                                     <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
                                         aria-labelledby="dropdownRadioButton">
+
                                         <li>
-                                            @foreach ($categories as $category)
+                                            <div
+                                                class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                <input id="filter-radio-0" type="radio" value=""
+                                                    wire:model.live="filterCategory" name="filter-radio"
+                                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <label for="filter-radio-0"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Semua</label>
+
+                                            </div>
+                                        </li>
+
+                                        @foreach ($categories as $category)
+                                            <li>
                                                 <div
                                                     class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                                                     <input id="filter-radio{{ $loop->index + 1 }}" type="radio"
@@ -48,8 +61,9 @@
                                                         class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{{ $category->name }}</label>
 
                                                 </div>
-                                            @endforeach
-                                        </li>
+                                            </li>
+                                        @endforeach
+
 
                                     </ul>
                                 </div>
@@ -87,9 +101,6 @@
                                         Nama
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Brand
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
                                         Kategori
                                     </th>
                                     <th scope="col" class="px-6 py-3">
@@ -106,7 +117,7 @@
                                     </td>
                                 </tr>
 
-                                @if ($product->isEmpty())
+                                @if ($brand->isEmpty())
                                     <tr class="text-xl text-center bg-white ">
                                         <td colspan="4" class="py-5">
                                             <div class="flex justify-center gap-5">
@@ -125,14 +136,14 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                Produk Tidak Ditemukan
+                                                Brand Tidak Ditemukan
                                             </div>
 
                                         </td>
                                     </tr>
                                 @endif
 
-                                @foreach ($product as $item)
+                                @foreach ($brand as $item)
                                     <tr
                                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                         {{-- <td class="w-4 p-4">
@@ -146,16 +157,18 @@
                                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ $item->name }}
                                         </th>
+
                                         <td class="px-6 py-4">
-                                            {{ $item->getBrand->name }}
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            {{ $item->getCategory->name }}
+                                            @foreach ($item->getListCategoryNames() as $categoryNames)
+                                                <span class="px-2 py-1 font-semibold leading-tight">
+                                                    {{ $categoryNames }}
+                                                </span>
+                                            @endforeach
                                         </td>
                                         <td class="px-6 py-4 text-sm font-medium">
-                                            <a href="/admin/product/edit/{{ $item->id }}"
+                                            <a href="/admin/brand/edit/{{ $item->id }}"
                                                 class="pr-2 text-blue-600 hover:text-blue-500">Edit</a>
-                                            <button onclick="deleteProduct({{ $item->id }})"
+                                            <button onclick="deleteBrand({{ $item->id }})"
                                                 class="text-red-600 hover:text-red-500">Delete</button>
                                         </td>
 
@@ -169,7 +182,7 @@
                     </div>
 
                     <div class="mt-3">
-                        {{ $product->onEachSide(1)->links() }}
+                        {{ $brand->onEachSide(1)->links() }}
                     </div>
                 </div>
 
