@@ -12,6 +12,20 @@
 
     <div class="max-w-3xl px-2 py-16 mx-auto md-px-32">
 
+        <div class="mb-8">
+
+            <a href="/admin/brand"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+
+                <svg class="w-5 h-5 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 8 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 1 1.3 6.326a.91.91 0 0 0 0 1.348L7 13" />
+                </svg>
+                <span class="sr-only"> Back</span>
+            </a>
+        </div>
+
         <form action="/admin/brand/edit" method="POST">
             @csrf
             <input type="hidden" name="id" value="{{ $brand->id }}">
@@ -137,6 +151,28 @@
 
 
         document.addEventListener('DOMContentLoaded', function() {
+
+            var success = @json(session()->get('success'));
+            if (success) {
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: success,
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                })
+            }
+
+            var error = @json(session()->get('error'));
+            if (error) {
+                Swal.fire({
+                    title: 'Gagal',
+                    text: error,
+                    icon: 'error',
+                    timer: 2000,
+                    showConfirmButton: false,
+                })
+            }
 
             $('#category').select2();
 
