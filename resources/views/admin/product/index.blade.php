@@ -5,14 +5,35 @@
         </h2>
     </x-slot>
 
-    @isset($success)
-        <x-toast />
-    @endisset
-
     @livewire('table-product')
 
-
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            var success = @json(session()->get('success'));
+            if (success) {
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: success,
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                })
+            }
+
+            var error = @json(session()->get('error'));
+            if (error) {
+                Swal.fire({
+                    title: 'Gagal',
+                    text: error,
+                    icon: 'error',
+                    timer: 2000,
+                    showConfirmButton: false,
+                })
+            }
+
+        });
+
         function deleteProduct($id) {
             Swal.fire({
                 title: 'Are you sure?',
