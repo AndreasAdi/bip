@@ -36,15 +36,22 @@
             <div class="px-12">
                 <h1 class="text-3xl font-semibold">{{ $data->name }}</h1>
                 <div class="mt-3 mb-5">
-                    <span class="bg-bip-blue-100 text-bip-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
-                        {{ $data->getCategory->name }}
+                    <span class="bg-bip-blue-100 text-bip-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ">
+                        #{{ $data->getCategory->name }}
                     </span>
-                    <span class="bg-bip-orange-100 text-bip-orange-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
-                        {{ $data->getBrand->name }}
+                    <span class="bg-bip-orange-100 text-bip-orange-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ">
+                        #{{ $data->getBrand->name }}
                     </span>
                     {{-- <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded ">
                         Mesin Hitung Uang
                     </span> --}}
+
+                    @foreach ($data->getListSubCategoryNames() as $sub)
+                        <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ">
+                            #{{ $sub }}
+                        </span>
+                    @endforeach
+
                     <a href="https://wa.me/6285399999538?text={{ $data->name }}"
                         class="block w-full px-3 py-2 mt-5 text-center text-white rounded-full bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500 hover:bg-gradient-to-brhover:from-bip-orange-400 hover:to-bip-orange-300">
                         Pesan
@@ -52,10 +59,13 @@
 
                     <!--Youtube Iframe-->
                     <div class="h-32 mt-5">
-                        <iframe width="fit" height="fit" class="w-full h-full" src="{{ $data->video }}"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+
+
+                        <div style="padding-bottom: 56.25%; position: relative;"><iframe width="100%" height="100%"
+                                src="{{ $data->video }}" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
+                        </div>
                     </div>
 
                 </div>
@@ -64,7 +74,7 @@
 
         </div>
         <div class="max-w-screen-xl px-16 md:px-32">
-            <div>
+            <div class="prose">
                 {!! $data->description !!}
 
 

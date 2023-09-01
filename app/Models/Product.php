@@ -13,6 +13,7 @@ class Product extends Model
         'name',
         'brand',
         'category',
+        'subcategory',
         'description',
         'picture',
         'status',
@@ -37,5 +38,18 @@ class Product extends Model
         }
 
         return $category;
+    }
+
+    public function getListSubCategoryNames()
+    {
+        $listSub = json_decode($this->subcategory);
+
+        if ($listSub == null) {
+            return null;
+        }
+        foreach ($listSub as $key => $value) {
+            $listSub[$key] = subcategory::find($value)->name;
+        }
+        return $listSub;
     }
 }

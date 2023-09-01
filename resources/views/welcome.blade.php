@@ -9,11 +9,12 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <title>PT Bismacindo Perkasa</title>
 </head>
 
 <body>
-    <div class="fixed w-screen bg-white loading screen">
+    <div class="fixed w-screen bg-white md:bg-transparent loading screen">
         <div class="flex text-3xl text-black animate-fade-in">
             <div class="mx-auto my-auto">
                 <svg aria-hidden="true" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -31,7 +32,22 @@
     </div>
 
     <x-navbar />
-
+    {{-- <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div> --}}
     <div id="default-carousel" class="relative hidden w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative overflow-hidden h-96 md:h-screen">
@@ -191,7 +207,7 @@
                 <div class="w-1/5 h-2 rounded-lg bg-gradient-to-tr from-bip-orange-400 to-bip-orange-600"></div>
             </div>
 
-            <div class="flex gap-4">
+            <div class="flex flex-wrap gap-4">
                 <div class="max-w-sm bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img class="rounded-t-lg " src="/images/banking.png" alt="" />
@@ -317,7 +333,7 @@
             </div>
         </div>
 
-        <div class="marquee3k">
+        <div class="flex marquee3k" data-aos="fade-up">
             <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 " data-speed="2.25"
                 data-reverse="true">
                 <div class="flex items-center">
@@ -338,7 +354,7 @@
         </div>
 
 
-        <div class="mt-8 marquee3k" data-reverse="true">
+        <div class="flex mt-8 marquee3k" data-reverse="true" data-aos="fade-up">
             <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 "
                 data-speed="2.25">
 
@@ -390,11 +406,30 @@
     <x-footer />
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <script src="marquee3k.js"></script>
 
     <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
         //make navbar transparent when it is on the top
         const navbar = document.querySelector(".navbar");
         const loading = document.querySelector(".loading");
@@ -406,9 +441,6 @@
         });
         //document ready
         window.addEventListener("load", () => {
-            Marquee3k.refreshAll();
-            console.log(Marquee3k);
-
             if (window.screen.width < 768) {
                 console.log("mobile");
                 navbar.classList.add("bg-white");

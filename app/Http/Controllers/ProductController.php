@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\subcategory;
 use App\Models\TemporaryImage;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $product = Product::paginate(1);
+        $product = Product::paginate(5);
 
 
         $images = array();
@@ -35,8 +36,9 @@ class ProductController extends Controller
     public function insert()
     {
         $brands = Brand::all();
+        $subcategory = subcategory::all();
 
-        return view('admin.product.insert', compact('brands'));
+        return view('admin.product.insert', compact('brands', 'subcategory'));
     }
 
     public function prosesInsert(Request $request)
@@ -46,6 +48,7 @@ class ProductController extends Controller
             'name' => 'required',
             'brand' => 'required',
             'category' => 'required',
+            'subcategory' => 'required',
             'description' => 'required',
             'image' => 'required',
 
@@ -56,10 +59,41 @@ class ProductController extends Controller
         }
 
 
+
+
         $newProduct = new Product();
         $newProduct->name = $request->input('name');
         $newProduct->brand = $request->input('brand');
         $newProduct->category = $request->input('category');
+
+        $listSubcategoryRaw = $request->input('subcategory');
+
+        $listSubcategory = [];
+
+
+        foreach ($request->subcategory as $key => $value) {
+
+            //check if subcategory exist
+            $subcategory = subcategory::where('id', $value)->first();
+
+            //if not exist add new subcategory
+            if (!$subcategory) {
+                $newSubcategory = new subcategory();
+                $newSubcategory->name = $value;
+                $newSubcategory->category_id = $request->category;
+                $newSubcategory->save();
+                $listSubcategory[$key] = $newSubcategory->id;
+                //remove new subcategory from listSubcategoryRaw
+                unset($listSubcategoryRaw[$key]);
+            }
+        }
+
+        if (count($listSubcategory) > 0) {
+            //merge subcategory and listSubcategory to one array
+            $newProduct->subcategory = json_encode(array_merge($listSubcategoryRaw, $listSubcategory));
+        } else {
+            $newProduct->subcategory = json_encode($request->subcategory);
+        }
         $newProduct->description = $request->input('description');
         $newProduct->status = "1";
 
@@ -120,6 +154,8 @@ class ProductController extends Controller
 
         $categories = Category::all();
 
+        $subcategory = subcategory::all();
+
         $images = array();
 
         $files = Storage::files('public/product/image/' . $product->id);
@@ -132,7 +168,7 @@ class ProductController extends Controller
 
 
 
-        return view('admin.product.edit', compact('product', 'brands', 'images', 'categories'));
+        return view('admin.product.edit', compact('product', 'brands', 'images', 'categories', 'subcategory'));
     }
 
     public function update(Request $request)
@@ -156,6 +192,35 @@ class ProductController extends Controller
         $product->description = $request->input('description');
         $product->status = "1";
         $product->video = $request->input('video');
+
+        $listSubcategoryRaw = $request->input('subcategory');
+
+        $listSubcategory = [];
+
+
+        foreach ($request->subcategory as $key => $value) {
+
+            //check if subcategory exist
+            $subcategory = subcategory::where('id', $value)->first();
+
+            //if not exist add new subcategory
+            if (!$subcategory) {
+                $newSubcategory = new subcategory();
+                $newSubcategory->name = $value;
+                $newSubcategory->category_id = $request->category;
+                $newSubcategory->save();
+                $listSubcategory[$key] = $newSubcategory->id;
+                //remove new subcategory from listSubcategoryRaw
+                unset($listSubcategoryRaw[$key]);
+            }
+        }
+
+        if (count($listSubcategory) > 0) {
+            //merge subcategory and listSubcategory to one array
+            $product->subcategory = json_encode(array_merge($listSubcategoryRaw, $listSubcategory));
+        } else {
+            $product->subcategory = json_encode($request->subcategory);
+        }
 
         $product->save();
 

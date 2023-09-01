@@ -36,8 +36,20 @@
                                     style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
                                     <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
                                         aria-labelledby="dropdownRadioButton">
+
                                         <li>
-                                            @foreach ($categories as $category)
+                                            <div
+                                                class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                <input id="filter-radio0" type="radio" value=""
+                                                    wire:model.live="filterCategory" name="filter-radio"
+                                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <label for="filter-radio0"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Semua</label>
+
+                                            </div>
+                                        </li>
+                                        @foreach ($categories as $category)
+                                            <li>
                                                 <div
                                                     class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                                                     <input id="filter-radio{{ $loop->index + 1 }}" type="radio"
@@ -48,8 +60,9 @@
                                                         class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{{ $category->name }}</label>
 
                                                 </div>
-                                            @endforeach
-                                        </li>
+                                            </li>
+                                        @endforeach
+
 
                                     </ul>
                                 </div>
@@ -93,6 +106,9 @@
                                         Kategori
                                     </th>
                                     <th scope="col" class="px-6 py-3">
+                                        Sub Kategori
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
                                         Action
                                     </th>
 
@@ -101,14 +117,14 @@
                             <tbody id="table-body">
 
                                 <tr wire:loading.delay.long>
-                                    <td colspan="4">
+                                    <td colspan="5">
                                         Loading...
                                     </td>
                                 </tr>
 
                                 @if ($product->isEmpty())
                                     <tr class="text-xl text-center bg-white ">
-                                        <td colspan="4" class="py-5">
+                                        <td colspan="5" class="py-5">
                                             <div class="flex justify-center gap-5">
                                                 <div>
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="48"
@@ -151,6 +167,18 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             {{ $item->getCategory->name }}
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            @if ($item->getListSubCategoryNames() != null)
+                                                @foreach ($item->getListSubCategoryNames() as $sub)
+                                                    <span
+                                                        class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">{{ $sub }}</span>
+                                                @endforeach
+                                            @else
+                                                <span
+                                                    class="px-2 py-1 text-xs font-medium text-red-800 bg-red-100 rounded-full">Tidak
+                                                    ada</span>
+                                            @endif
                                         </td>
                                         <td class="px-6 py-4 text-sm font-medium">
                                             <a href="/admin/product/edit/{{ $item->id }}"

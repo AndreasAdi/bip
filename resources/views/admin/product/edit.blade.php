@@ -5,7 +5,6 @@
             {{ __('Edit Produk') }}
         </h2>
     </x-slot>
-    <x-toast />
 
     <div class="max-w-3xl px-2 py-16 mx-auto md-px-32">
         <form action="/admin/product/edit" method="POST">
@@ -19,9 +18,9 @@
                     placeholder="Nama Produk" name="name" required value="{{ $product->name }}">
             </div>
             <div class="mb-6">
-                <label for="kategori"
+                <label for="category"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
-                <select id="kategori"
+                <select id="category"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     name="category">
 
@@ -30,6 +29,17 @@
                             {{ $category->name }}</option>
                     @endforeach
 
+                </select>
+            </div>
+            <div class="mb-6">
+                <label for="sub-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sub
+                    Kategori</label>
+                <select id="sub-category"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    name="subcategory[]" multiple>
+                    @foreach ($subcategory as $item)
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @endforeach
                 </select>
             </div>
 
@@ -83,6 +93,7 @@
         </form>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/78z4m7tquef9qxfszdbtcrngjsw2ey3t2a52n6wuxx7jby2k/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
@@ -145,11 +156,31 @@
 
 
         document.addEventListener('DOMContentLoaded', function() {
+
+            var success = @json(session()->get('success'));
+            if (success) {
+                Swal.fire({
+                    title: 'Berhasil',
+                    text: success,
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false,
+                })
+            }
+
+
+            $('#category').select2();
+            $('#brand').select2();
+            $("#sub-category").select2({
+                tags: true,
+                tokenSeparators: [',']
+            });
+
+            $('#sub-category').val({!! $product->subcategory !!});
+            $('#sub-category').trigger('change');
+
             //select the input and turn it into a pond
             FilePond.create(document.querySelector('.filepond'));
-
-
-
             FilePond.setOptions({
                 server: {
                     process: '{{ route('upload') }}',

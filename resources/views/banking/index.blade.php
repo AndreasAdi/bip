@@ -33,9 +33,9 @@
                 </a>
             </div>
 
-            <div class="gap-2 md:flex lg:px-32 lg:py-16">
+            <div class="gap-2 md:flex md:flex-wrap md:justify-center lg:px-32 lg:py-16">
                 @foreach ($data as $item)
-                    <div class="transition-transform ease-in-out border md:w-4/12 hover:scale-105">
+                    <div class="transition-transform ease-in-out border md:w-3/12 hover:scale-105">
                         <figure class="relative">
                             <a href="banking/{{ $item->id }}">
                                 <img class="h-auto max-w-full p-5 rounded-lg" src="{{ $images[$loop->index][1] }}"
@@ -49,140 +49,10 @@
                     </div>
                 @endforeach
 
-                {{-- <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking2.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Money Counter GRG CM200V</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking3.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Money Counter IBD G100</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking5.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">CMICO VACUUM TYPE CCM-868 Floor</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking6.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">CMICO VACUUM TYPE CCM-868 Dekstop</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking7.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Branch Cash Recycler GRG P5800</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking8.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Branch Cash Recycler GRG TCR71</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking4.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Money Counter IBD G110</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking4.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Money Counter IBD G110</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking4.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Money Counter IBD G110</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking4.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Money Counter IBD G110</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="#">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="images/banking/banking4.webp"
-                                alt="">
-                        </a>
-                        <figcaption
-                            class="absolute w-full px-4 py-1 text-lg text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-xl text-center">Money Counter IBD G110</p>
-                        </figcaption>
-                    </figure>
-                </div> --}}
             </div>
-
+            <div class="flex justify-center">
+                {{ $data->links() }}
+            </div>
 
 
         </div>

@@ -13,7 +13,7 @@ class BankingController extends Controller
     function index()
     {
 
-        $data = Product::where('category', 1)->paginate(5);
+        $data = Product::where('category', 1)->simplePaginate(9);
 
         $images = array();
         foreach ($data as $key => $value) {

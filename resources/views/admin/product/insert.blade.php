@@ -17,9 +17,9 @@
                     placeholder="Nama Produk" name="name" required>
             </div>
             <div class="mb-6">
-                <label for="kategori"
+                <label for="category"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
-                <select id="kategori"
+                <select id="category"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     name="category">
 
@@ -30,10 +30,21 @@
                     <option value="5">Certification</option>
                 </select>
             </div>
+            <div class="mb-6">
+                <label for="sub-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sub
+                    Kategori</label>
+                <select id="sub-category"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    name="subcategory[]" multiple>
+                    @foreach ($subcategory as $item)
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <div class="mb-6">
                 <label for="brand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
-                <select id="brand"
+                <select id="brand" id="brand"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     name="brand">
 
@@ -73,6 +84,7 @@
         </form>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.tiny.cloud/1/78z4m7tquef9qxfszdbtcrngjsw2ey3t2a52n6wuxx7jby2k/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
@@ -135,10 +147,14 @@
 
 
         document.addEventListener('DOMContentLoaded', function() {
+            $('#category').select2();
+            $('#brand').select2();
+            $("#sub-category").select2({
+                tags: true,
+                tokenSeparators: [',']
+            })
             //select the input and turn it into a pond
             FilePond.create(document.querySelector('.filepond'));
-
-
 
             FilePond.setOptions({
                 server: {
