@@ -14,7 +14,6 @@
 
 <body>
     <x-navbar-solid />
-
     <main>
         <div class="mt-5 md:px-10 ">
             <h1 class="mt-5 mb-3 text-2xl font-semibold text-center">Banking Equipment</h1>
@@ -54,17 +53,11 @@
                 {{ $data->links() }}
             </div>
 
-
         </div>
 
     </main>
 
-
-
-
-
     <x-footer />
-
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
