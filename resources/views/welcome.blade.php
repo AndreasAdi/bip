@@ -15,7 +15,7 @@
     <style>
         .swiper {
             width: 100%;
-            height: 100vh
+
         }
     </style>
     <title>PT Bismacindo Perkasa</title>
@@ -44,7 +44,7 @@
 
     <x-navbar />
 
-    <div class="swiper mySwiper">
+    <div class="h-[70vh] md:h-screen swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.png')]" data-carousel-item>
@@ -52,9 +52,9 @@
                         <div class="relative gap-6 lg:grid lg:grid-cols-2">
                             <div>
                                 <h1
-                                    class="w-full mt-32 text-2xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
+                                    class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
                                     We provide modern office equipment and furniture & Banking Equipment</h1>
-                                <div class="mt-5 lg:flex">
+                                <div class="hidden mt-5 md:flex">
                                     <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur, adipisicing
                                         elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis atque ad
                                         sapiente
@@ -68,7 +68,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="swiper-slide">
                 <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.png')]" data-carousel-item>
@@ -76,9 +75,9 @@
                         <div class="relative gap-6 lg:grid lg:grid-cols-2">
                             <div>
                                 <h1
-                                    class="w-full mt-32 text-2xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
+                                    class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
                                     We provide modern office equipment and furniture & Banking Equipment</h1>
-                                <div class="mt-5 lg:flex">
+                                <div class="hidden mt-5 md:flex">
                                     <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur, adipisicing
                                         elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis atque ad
                                         sapiente
@@ -92,7 +91,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="swiper-slide">
                 <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.png')]" data-carousel-item>
@@ -100,9 +98,9 @@
                         <div class="relative gap-6 lg:grid lg:grid-cols-2">
                             <div>
                                 <h1
-                                    class="w-full mt-32 text-2xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
+                                    class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
                                     We provide modern office equipment and furniture & Banking Equipment</h1>
-                                <div class="mt-5 lg:flex">
+                                <div class="hidden mt-5 md:flex">
                                     <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur, adipisicing
                                         elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis atque ad
                                         sapiente
@@ -116,55 +114,6 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.png')]" data-carousel-item>
-                    <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <div class="relative gap-6 lg:grid lg:grid-cols-2">
-                            <div>
-                                <h1
-                                    class="w-full mt-32 text-2xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
-                                    We provide modern office equipment and furniture & Banking Equipment</h1>
-                                <div class="mt-5 lg:flex">
-                                    <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur, adipisicing
-                                        elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis atque ad
-                                        sapiente
-                                        aliquam cupiditate fuga fugiat accusamus totam, et, quaerat tempora. Sed,
-                                        molestias
-                                        dolore?</p>
-                                </div>
-                            </div><img alt="carousel-1"
-                                class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
-                                src="https://www.satkomindo.com/assets/image3-bd25cc39.png">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="swiper-slide">
-                <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.png')]" data-carousel-item>
-                    <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <div class="relative gap-6 lg:grid lg:grid-cols-2">
-                            <div>
-                                <h1
-                                    class="w-full mt-32 text-2xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
-                                    We provide modern office equipment and furniture & Banking Equipment</h1>
-                                <div class="mt-5 lg:flex">
-                                    <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur, adipisicing
-                                        elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis atque ad
-                                        sapiente
-                                        aliquam cupiditate fuga fugiat accusamus totam, et, quaerat tempora. Sed,
-                                        molestias
-                                        dolore?</p>
-                                </div>
-                            </div><img alt="carousel-1"
-                                class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
-                                src="https://www.satkomindo.com/assets/image3-bd25cc39.png">
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
         </div>
@@ -487,15 +436,6 @@
         });
         //document ready
         window.addEventListener("load", () => {
-            if (window.screen.width < 768) {
-                console.log("mobile");
-                navbar.classList.add("bg-white");
-                navbar.classList.remove("bg-transparent");
-                navbar.classList.remove("text-white");
-                navbar.classList.add("text-base-900");
-                return;
-            }
-
             var swiper = new Swiper(".mySwiper", {
                 spaceBetween: 0,
                 centeredSlides: true,
@@ -513,25 +453,35 @@
                     prevEl: ".swiper-button-prev",
                 },
             });
-        });
+            if (window.screen.width < 768) {
 
-
-        window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 0 || window.screen.width < 768) {
                 navbar.classList.add("bg-white");
                 navbar.classList.remove("bg-transparent");
                 navbar.classList.remove("text-white");
                 navbar.classList.add("text-base-900");
-                navbar.classList.add("shadow-lg");
-
-            } else if (window.pageYOffset == 0 && window.innerWidth > 768) {
-                navbar.classList.add("bg-transparent");
-                navbar.classList.remove("bg-white");
-                navbar.classList.remove("text-base-900");
-                navbar.classList.add("text-white")
-                navbar.classList.remove("shadow-lg");
+                return;
             }
+
+
         });
+
+
+        // window.addEventListener("scroll", () => {
+        //     if (window.pageYOffset > 0 || window.screen.width < 768) {
+        //         navbar.classList.add("bg-white");
+        //         navbar.classList.remove("bg-transparent");
+        //         navbar.classList.remove("text-white");
+        //         navbar.classList.add("text-base-900");
+        //         navbar.classList.add("shadow-lg");
+
+        //     } else if (window.pageYOffset == 0 && window.innerWidth > 768) {
+        //         navbar.classList.add("bg-transparent");
+        //         navbar.classList.remove("bg-white");
+        //         navbar.classList.remove("text-base-900");
+        //         navbar.classList.add("text-white")
+        //         navbar.classList.remove("shadow-lg");
+        //     }
+        // });
 
         window.setTimeout(unhide, 1);
 
