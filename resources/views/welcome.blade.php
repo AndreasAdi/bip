@@ -466,22 +466,22 @@
         });
 
 
-        // window.addEventListener("scroll", () => {
-        //     if (window.pageYOffset > 0 || window.screen.width < 768) {
-        //         navbar.classList.add("bg-white");
-        //         navbar.classList.remove("bg-transparent");
-        //         navbar.classList.remove("text-white");
-        //         navbar.classList.add("text-base-900");
-        //         navbar.classList.add("shadow-lg");
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 0 || window.screen.width < 768) {
+                navbar.classList.add("bg-white");
+                navbar.classList.remove("bg-transparent");
+                navbar.classList.remove("text-white");
+                navbar.classList.add("text-base-900");
+                navbar.classList.add("shadow-lg");
 
-        //     } else if (window.pageYOffset == 0 && window.innerWidth > 768) {
-        //         navbar.classList.add("bg-transparent");
-        //         navbar.classList.remove("bg-white");
-        //         navbar.classList.remove("text-base-900");
-        //         navbar.classList.add("text-white")
-        //         navbar.classList.remove("shadow-lg");
-        //     }
-        // });
+            } else if (window.pageYOffset == 0 && window.innerWidth > 768) {
+                navbar.classList.add("bg-transparent");
+                navbar.classList.remove("bg-white");
+                navbar.classList.remove("text-base-900");
+                navbar.classList.add("text-white")
+                navbar.classList.remove("shadow-lg");
+            }
+        });
 
         window.setTimeout(unhide, 1);
 
