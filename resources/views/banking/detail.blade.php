@@ -86,18 +86,23 @@
             <h2 class="text-xl font-semibold">Produk Serupa</h2>
             <div class="grid grid-cols-1 gap-6 md:grid-cols-5 md:gap-12 ">
 
-                <div class="transition-transform ease-in-out hover:scale-105">
-                    <figure class="relative">
-                        <a href="/banking/1">
-                            <img class="h-auto max-w-full p-5 rounded-lg" src="/images/banking/banking2.webp"
-                                alt="">
-                        </a>
-                        <figcaption class="absolute w-full px-4 py-1 text-white rounded-b-lg bottom-6 bg-gray-600/40">
-                            <p class="text-center text-md">Money Counter GRG CM100V</p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="transition-transform ease-in-out hover:scale-105">
+                @foreach ($similarProduct as $item)
+                    <div class="transition-transform ease-in-out hover:scale-105">
+                        <figure class="relative">
+                            <a href="/banking/{{ $item->id }}">
+                                <img class="h-auto max-w-full p-5 rounded-lg"
+                                    src="{{ $similarProductImages[$loop->index] }}" alt="">
+                            </a>
+                            <figcaption
+                                class="absolute w-full px-4 py-1 text-white rounded-b-lg bottom-6 bg-gray-600/40">
+                                <p class="text-center text-md">{{ $item->name }}</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                @endforeach
+
+
+                {{-- <div class="transition-transform ease-in-out hover:scale-105">
                     <figure class="relative">
                         <a href="/banking/1">
                             <img class="h-auto max-w-full p-5 rounded-lg" src="/images/banking/banking3.webp"
@@ -140,7 +145,7 @@
                             <p class="text-center text-md">Money Counter GRG CM100V</p>
                         </figcaption>
                     </figure>
-                </div>
+                </div> --}}
 
             </div>
         </div>
