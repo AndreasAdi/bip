@@ -194,8 +194,72 @@
                 <div class="w-1/5 h-2 rounded-lg bg-gradient-to-tr from-bip-orange-400 to-bip-orange-600"></div>
             </div>
 
-            <div class="flex flex-wrap gap-4">
-                <div class="max-w-sm bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
+            <div class="flex flex-wrap justify-center gap-4">
+                <div
+                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-lg" src="/images/banking.png" alt="" />
+
+                    <a href="/it"
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        <div class="flex items-center justify-center h-full">
+                            <h5 class="text-2xl font-bold text-white">Banking Equipment</h5>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-lg" src="/images/it.png" alt="" />
+
+                    <a href="/it"
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        <div class="flex items-center justify-center h-full">
+                            <h5 class="text-2xl font-bold text-white ">IT Product</h5>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-lg" src="/images/office.png" alt="" />
+
+                    <a href="/it"
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        <div class="flex items-center justify-center h-full">
+                            <h5 class="text-2xl font-bold text-white ">Office</h5>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-lg" src="/images/machine.png" alt="" />
+
+                    <a href="/it"
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        <div class="flex items-center justify-center h-full">
+                            <h5 class="text-2xl font-bold text-white ">Machine Tool</h5>
+                        </div>
+                    </a>
+                </div>
+                <div
+                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+
+                    <img class="rounded-lg" src="/images/certification.png" alt="" />
+
+                    <a href="/it"
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        <div class="flex items-center justify-center h-full">
+                            <h5 class="text-2xl font-bold text-white ">Certification</h5>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                {{-- <div class="max-w-sm bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+
                     <a href="#">
                         <img class="rounded-t-lg " src="/images/banking.png" alt="" />
                     </a>
@@ -303,7 +367,7 @@
                             </svg>
                         </a>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -439,7 +503,7 @@
             }
         });
 
-        window.setTimeout(unhide, 3000);
+        window.setTimeout(unhide, 1);
 
         function unhide() {
             navbar.classList.remove("hidden");
