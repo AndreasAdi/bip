@@ -5,8 +5,8 @@
         <div class="grid grid-cols-1 gap-6 px-5 py-5 md:grid-cols-2 md:gap-12 lg:px-32 ">
             <div>
                 <div class="grid gap-4">
-                    <div class="col-1">
-                        <img class="max-w-lg p-6 border rounded-lg" src="{{ $images[1] }}" alt="">
+                    <div>
+                        <img class="p-6 border rounded-lg w-md" src="{{ $images[1] }}" alt="">
                     </div>
                     {{-- <div class="grid grid-cols-5 gap-4">
                         <div>
@@ -62,10 +62,11 @@
 
 
                         <div style="padding-bottom: 56.25%; position: relative;"><iframe width="100%" height="100%"
-                                src="{{ $data->video }}" frameborder="0"
+                                src="{{ $data->video }}" referrerpolicy="no-referrer-when-downgrade" frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                                 style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
                         </div>
+
                     </div>
 
                 </div>
