@@ -2,9 +2,9 @@
 
     <x-navbar-solid />
 
-    <main class="px-32 py-8">
+    <main class="p-4 py-8 md:px-32">
 
-        <div class="relative w-full overflow-hidden rounded-lg shadow-xl h-80"><img alt="Penghargaan"
+        <div class="relative w-full h-48 overflow-hidden rounded-lg shadow-xl md:h-80"><img alt="Penghargaan"
                 class="absolute inset-0 object-cover w-full h-full" src="/images/penghargaan.jpg">
             <div class="absolute inset-0 bg-gray-900/70"></div>
             <div class="relative flex flex-col items-center justify-center h-full gap-2 p-2 text-center">
