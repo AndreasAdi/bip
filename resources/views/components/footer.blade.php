@@ -9,7 +9,7 @@
                         Perkasa</span>
                 </a>
 
-                <p class="mt-3 text-gray-500 w-96">
+                <p class="mt-3 text-gray-500 md:max-w-md">
                     Jl. Raya Pesanggrahan 1128 B-C, Puri Kembangan Kel. Kembangan Selatan, Kec. Kembangan Kota
                     Administrasi Jakarta Barat, DKI Jakarta, 11610 Indonesia
                 </p>

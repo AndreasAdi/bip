@@ -196,7 +196,7 @@
 
             <div class="flex flex-wrap justify-center gap-4">
                 <div
-                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700 ">
 
                     <img class="rounded-lg" src="/images/banking.png" alt="" />
 

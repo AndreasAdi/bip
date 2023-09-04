@@ -1,8 +1,8 @@
 <x-main>
     <x-navbar-solid />
 
-    <main class="px-32 py-8">
-        <div class="relative w-full overflow-hidden rounded-lg shadow-xl h-80"><img alt="Company Profile"
+    <main class="p-2 py-8 md:px-32">
+        <div class="relative w-full h-48 overflow-hidden rounded-lg shadow-xl md:h-80"><img alt="Company Profile"
                 class="absolute inset-0 object-cover w-full h-full" src="/images/company-profile.jpg">
             <div class="absolute inset-0 bg-gray-900/70"></div>
             <div class="relative flex flex-col items-center justify-center h-full gap-2 p-2 text-center">
@@ -22,7 +22,7 @@
         </div> --}}
 
 
-        <div class="my-16 ">
+        <div class="my-6 md:my-16 ">
             <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
                 src="https://heyzine.com/flip-book/46977bdba8.html" style=" width: 100%; height: 100vh;"></iframe>
         </div>
