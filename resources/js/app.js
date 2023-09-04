@@ -6,7 +6,7 @@ import "flowbite";
 
 import { PageFlip } from "page-flip";
 
-import Swal from "sweetalert2";
+import Swal from "sweetalert2-neutral";
 
 window.PageFlip = PageFlip;
 
