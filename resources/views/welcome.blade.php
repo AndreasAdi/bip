@@ -10,7 +10,6 @@
     @vite('resources/js/app.js')
     @vite('resources/css/loading.min.css')
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <style>
         .swiper {
@@ -435,7 +434,6 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <script src="marquee3k.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
         //make navbar transparent when it is on the top
         const navbar = document.querySelector(".navbar");
@@ -449,24 +447,6 @@
         //document ready
         window.addEventListener("load", () => {
 
-            var swiper = new Swiper(".mySwiper", {
-                spaceBetween: 0,
-                centeredSlides: true,
-                loop: true,
-                autoplay: {
-                    speed: 500,
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
             if (window.screen.width < 768) {
 
                 navbar.classList.add("bg-white");
@@ -506,6 +486,26 @@
             AOS.init({
                 delay: 350,
 
+            });
+
+
+            var swiper = new Swiper(".mySwiper", {
+                spaceBetween: 0,
+                centeredSlides: true,
+                loop: true,
+                autoplay: {
+                    speed: 500,
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
             });
         }
     </script>
