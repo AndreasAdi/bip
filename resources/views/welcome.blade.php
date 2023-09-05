@@ -16,6 +16,7 @@
         .swiper {
             width: 100%;
 
+
         }
     </style>
     <title>PT Bismacindo Perkasa</title>
@@ -157,11 +158,11 @@
 
             <div class="flex flex-wrap justify-center gap-4">
                 <div
-                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700 ">
+                    class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700 ">
 
                     <img class="rounded-lg" src="/images/banking.png" alt="" />
 
-                    <a href="/it"
+                    <a href="/banking"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white">Banking Equipment</h5>
@@ -169,7 +170,7 @@
                     </a>
                 </div>
                 <div
-                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+                    class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
 
                     <img class="rounded-lg" src="/images/it.png" alt="" />
 
@@ -181,11 +182,11 @@
                     </a>
                 </div>
                 <div
-                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+                    class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
 
                     <img class="rounded-lg" src="/images/office.png" alt="" />
 
-                    <a href="/it"
+                    <a href="/office"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white ">Office</h5>
@@ -193,11 +194,11 @@
                     </a>
                 </div>
                 <div
-                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+                    class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
 
                     <img class="rounded-lg" src="/images/machine.png" alt="" />
 
-                    <a href="/it"
+                    <a href="/machine"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white ">Machine Tool</h5>
@@ -205,11 +206,11 @@
                     </a>
                 </div>
                 <div
-                    class="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
+                    class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
 
                     <img class="rounded-lg" src="/images/certification.png" alt="" />
 
-                    <a href="/it"
+                    <a href="/certification"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white ">Certification</h5>
@@ -345,21 +346,30 @@
             </div>
         </div>
 
-        <div class="flex marquee3k" data-aos="fade-up">
+        <div class="flex my-12 marquee3k" data-aos="fade-up">
             <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 " data-speed="2.25"
                 data-reverse="true">
-                <div class="flex items-center">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/bri.png" alt="BRI">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/mandiri2.png" alt="mandiri">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/btn2.png" alt="btn">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/bni.png" alt="bni">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/mega.png" alt="mega">
-                    {{-- <img class="h-16" src="images/logo/permata.png" alt="permata">
-                    <img class="h-16" src="images/logo/uob.png" alt="uob">
-                    <img class="h-16" src="images/logo/qnb.png" alt="qnb">
-                    <img class="h-16" src="images/logo/bca.png" alt="bca">
-                    <img class="h-16" src="images/logo/bankdki.png" alt="bank dki"> --}}
+                <div class="flex items-center justify-center gap-x-6">
 
+                    <div class="w-48 aspect-h-9">
+                        <img class="grayscale hover:grayscale-0" src="images/logo/bri.png" alt="BRI">
+
+                    </div>
+                    <div class="w-48 aspect-h-9">
+                        <img class=" grayscale hover:grayscale-0" src="images/logo/mandiri2.png" alt="mandiri">
+
+                    </div>
+                    <div class="w-48 aspect-h-9">
+                        <img class=" grayscale hover:grayscale-0" src="images/logo/btn2.png" alt="btn">
+
+                    </div>
+                    <div class="w-48 aspect-h-9">
+                        <img class=" grayscale hover:grayscale-0" src="images/logo/bni.png" alt="bni">
+                    </div>
+                    <div class="w-48 aspect-h-9">
+                        <img class="grayscale hover:grayscale-0" src="images/logo/mega.png" alt="mega">
+
+                    </div>
                 </div>
 
             </div>
@@ -371,26 +381,22 @@
                 data-speed="2.25">
 
                 <div class="flex items-center">
-                    {{-- <img class="h-16" src="images/logo/bri.png" alt="BRI">
-                    <img class="h-16" src="images/logo/mandiri2.png" alt="mandiri">
-                    <img class="h-16" src="images/logo/btn2.png" alt="btn">
-                    <img class="h-16" src="images/logo/bni.png" alt="bni">
-                    <img class="h-16" src="images/logo/mega.png" alt="mega"> --}}
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/permata.png" alt="permata">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/uob.png" alt="uob">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/qnb.png" alt="qnb">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/bca.png" alt="bca">
-                    <img class="h-16 grayscale hover:grayscale-0" src="images/logo/bankdki.png" alt="bank dki">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/permata.png"
+                        alt="permata">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/uob.png"
+                        alt="uob">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/qnb.png"
+                        alt="qnb">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bca.png"
+                        alt="bca">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bankdki.png"
+                        alt="bank dki">
 
                 </div>
 
             </div>
         </div>
     </div>
-
-
-
-
 
     <div class="grid grid-cols-1 gap-6 px-5 py-10 md:grid-cols-2 md:gap-12 lg:p-32 bg-bip-blue-950">
         <div data-aos="fade-up-right">
@@ -436,6 +442,7 @@
         });
         //document ready
         window.addEventListener("load", () => {
+
             var swiper = new Swiper(".mySwiper", {
                 spaceBetween: 0,
                 centeredSlides: true,
@@ -464,6 +471,8 @@
 
 
         });
+
+
 
 
         window.addEventListener("scroll", () => {
