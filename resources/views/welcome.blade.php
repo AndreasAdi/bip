@@ -417,7 +417,7 @@
                     kami atau membutuhkan Banking Equipment, IT Product atau Office Equipment untuk perusahaan atau
                     organisasi anda? jangan ragu untuk menghubungi kami</div><a
                     class="px-8 py-3 text-white rounded-full bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500 hover:bg-gradient-to-br hover:from-bip-orange-400 hover:to-bip-orange-300 hover:text-white"
-                    href="/help">Hubungi kami</a>
+                    href="/contact">Hubungi kami</a>
             </div>
 
         </div>
