@@ -5,39 +5,21 @@
         <div class="grid grid-cols-1 gap-6 px-5 py-5 md:grid-cols-2 md:gap-12 lg:px-32 ">
             <div>
                 <div class="">
-
-                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                    <div style="--swiper-navigation-color: #fe4711; --swiper-pagination-color: #fff"
                         class="swiper mySwiper2">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                            @foreach ($images as $item)
+                                <div class="border rounded-lg swiper-slide">
+                                    <img class="object-cover" src="{{ $item }}" />
+                                </div>
+                            @endforeach
+                            <div class=" swiper-slide">
+                                <div style="padding-bottom: 56.25%; position: relative;"><iframe width="100%"
+                                        height="100%" src="{{ $data->video }}"
+                                        referrerpolicy="no-referrer-when-downgrade" frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
+                                </div>
                             </div>
                         </div>
                         <div class="swiper-button-next"></div>
@@ -45,36 +27,12 @@
                     </div>
                     <div thumbsSlider="" class="mt-2 swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="border border-stone-400 swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="{{ $images[1] }}" />
-                            </div>
+                            @foreach ($images as $item2)
+                                <div class="border rounded-lg border-stone-400 swiper-slide">
+                                    <img class="p-1" src="{{ $item2 }}" />
+                                </div>
+                            @endforeach
+
                         </div>
                     </div>
                 </div>

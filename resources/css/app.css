@@ -12,3 +12,7 @@
     @apply bg-gray-200;
     @apply border-2;
 }
+
+.mySwiper .swiper-slide-thumb-active {
+    @apply border-2 border-bip-orange-400;
+}
