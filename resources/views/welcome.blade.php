@@ -50,7 +50,7 @@
             <div class="swiper-slide">
                 <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.png')]" data-carousel-item>
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <div class="relative gap-6 lg:grid lg:grid-cols-2">
+                        <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
                             <div>
                                 <h1
                                     class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
@@ -63,9 +63,12 @@
                                         molestias
                                         dolore?</p>
                                 </div>
-                            </div><img alt="carousel-1"
-                                class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
-                                src="https://www.satkomindo.com/assets/image3-bd25cc39.png">
+                            </div>
+                            <div>
+                                <img alt="carousel-1"
+                                    class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
+                                    src="images/slide1.svg">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,7 +76,7 @@
             <div class="swiper-slide">
                 <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.png')]" data-carousel-item>
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <div class="relative gap-6 lg:grid lg:grid-cols-2">
+                        <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
                             <div>
                                 <h1
                                     class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
@@ -86,9 +89,12 @@
                                         molestias
                                         dolore?</p>
                                 </div>
-                            </div><img alt="carousel-1"
-                                class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
-                                src="https://www.satkomindo.com/assets/image3-bd25cc39.png">
+                            </div>
+                            <div>
+                                <img alt="carousel-1"
+                                    class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
+                                    src="images/slide2.svg">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -160,10 +166,10 @@
                 <div
                     class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700 ">
 
-                    <img class="rounded-lg" src="/images/banking.png" alt="" />
+                    <img class="rounded-lg group-hover:blur-sm" src="/images/banking.png" alt="" />
 
                     <a href="/banking"
-                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white">Banking Equipment</h5>
                         </div>
@@ -175,7 +181,7 @@
                     <img class="rounded-lg" src="/images/it.png" alt="" />
 
                     <a href="/it"
-                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white ">IT Product</h5>
                         </div>
@@ -187,7 +193,7 @@
                     <img class="rounded-lg" src="/images/office.png" alt="" />
 
                     <a href="/office"
-                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white ">Office</h5>
                         </div>
@@ -199,7 +205,7 @@
                     <img class="rounded-lg" src="/images/machine.png" alt="" />
 
                     <a href="/machine"
-                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white ">Machine Tool</h5>
                         </div>
@@ -211,7 +217,7 @@
                     <img class="rounded-lg" src="/images/certification.png" alt="" />
 
                     <a href="/certification"
-                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-bip-orange-400">
+                        class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
                         <div class="flex items-center justify-center h-full">
                             <h5 class="text-2xl font-bold text-white ">Certification</h5>
                         </div>
@@ -447,10 +453,11 @@
                 spaceBetween: 0,
                 centeredSlides: true,
                 loop: true,
-                // autoplay: {
-                //     delay: 2500,
-                //     disableOnInteraction: false,
-                // },
+                autoplay: {
+                    speed: 500,
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
@@ -472,9 +479,6 @@
 
         });
 
-
-
-
         window.addEventListener("scroll", () => {
             if (window.pageYOffset > 0 || window.screen.width < 768) {
                 navbar.classList.add("bg-white");
@@ -492,7 +496,7 @@
             }
         });
 
-        window.setTimeout(unhide, 1);
+        window.setTimeout(unhide, 5000);
 
         function unhide() {
             navbar.classList.remove("hidden");
