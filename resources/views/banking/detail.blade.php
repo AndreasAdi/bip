@@ -13,14 +13,6 @@
                                     <img class="object-cover" src="{{ $item }}" />
                                 </div>
                             @endforeach
-                            <div class=" swiper-slide">
-                                <div style="padding-bottom: 56.25%; position: relative;"><iframe width="100%"
-                                        height="100%" src="{{ $data->video }}"
-                                        referrerpolicy="no-referrer-when-downgrade" frameborder="0"
-                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                                        style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;"></iframe>
-                                </div>
-                            </div>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -32,7 +24,6 @@
                                     <img class="p-1" src="{{ $item2 }}" />
                                 </div>
                             @endforeach
-
                         </div>
                     </div>
                 </div>
@@ -44,9 +35,9 @@
                     <span class="bg-bip-blue-100 text-bip-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ">
                         #{{ $data->getCategory->name }}
                     </span>
-                    <span class="bg-bip-orange-100 text-bip-orange-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ">
+                    {{-- <span class="bg-bip-orange-100 text-bip-orange-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ">
                         #{{ $data->getBrand->name }}
-                    </span>
+                    </span> --}}
                     @foreach ($data->getListSubCategoryNames() as $sub)
                         <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ">
                             #{{ $sub }}
@@ -75,6 +66,10 @@
             </div>
         </div>
         <div class="px-5 lg:px-32">
+            <!--
+                TODO:
+                1.Handle sub kategory lebih dari 1-->
+
             <h2 class="text-xl font-semibold">Produk Serupa</h2>
             <div class="grid grid-cols-1 gap-6 md:grid-cols-5 md:gap-12 ">
 
@@ -109,6 +104,7 @@
             var swiper2 = new Swiper(".mySwiper2", {
                 loop: true,
                 spaceBetween: 10,
+                zoom: true,
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
