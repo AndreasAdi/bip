@@ -66,10 +66,6 @@
             </div>
         </div>
         <div class="px-5 lg:px-32">
-            <!--
-                TODO:
-                1.Handle sub kategory lebih dari 1-->
-
             <h2 class="text-xl font-semibold">Produk Serupa</h2>
             <div class="grid grid-cols-1 gap-6 md:grid-cols-5 md:gap-12 ">
 
