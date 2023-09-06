@@ -30,6 +30,45 @@ class BankingController extends Controller
         return view('banking.index', compact('data', 'images'));
     }
 
+    function list($id)
+    {
+
+        $subCategoryID = "";
+        $subCategoryName = "";
+
+        switch ($id) {
+            case 'pos':
+                $subCategoryID = "15";
+                $subCategoryName = "POS / Smart POS";
+                break;
+
+            default:
+                # code...
+                break;
+        }
+
+
+        if ($subCategoryID == "") {
+            $data = Product::where('category', 1)->simplePaginate(9);
+        } else {
+            $data = Product::where('category', 1)->whereJsonContains('subcategory', $subCategoryID)->simplePaginate(8);
+        }
+
+        $images = array();
+
+        foreach ($data as $key => $value) {
+            $files = Storage::files('public/product/image/' . $value->id);
+            $count = count($files);
+
+            for ($i = 1; $i <= $count; $i++) {
+                $images[$key][$i] = Storage::url($files[$i - 1]);
+            }
+        }
+
+
+        return view('banking.sub', compact('data', 'images', 'subCategoryName'));
+    }
+
     function detail(string $id)
     {
         $data = Product::where('id', $id)->first();
