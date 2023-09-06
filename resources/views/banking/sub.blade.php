@@ -28,7 +28,7 @@
                                     <div class="w-1/3 h-2 bg-white rounded-md"></div>
                                     <div class="flex">
                                         <a href="/banking/product/{{ $item->id }}"
-                                            class="px-2 py-2 mt-4 text-white border-2 border-white rounded-lg cursor-pointer">
+                                            class="px-2 py-2 mt-4 text-white border-2 border-white rounded-lg cursor-pointer hover:bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500">
                                             Lihat Detail</a>
                                     </div>
                                 </div>
