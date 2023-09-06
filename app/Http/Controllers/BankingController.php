@@ -41,7 +41,10 @@ class BankingController extends Controller
                 $subCategoryID = "15";
                 $subCategoryName = "POS / Smart POS";
                 break;
-
+            case 'teller-machine':
+                $subCategoryID = "13";
+                $subCategoryName = "Teller";
+                break;
             default:
                 # code...
                 break;
@@ -49,7 +52,7 @@ class BankingController extends Controller
 
 
         if ($subCategoryID == "") {
-            $data = Product::where('category', 1)->simplePaginate(9);
+            $data = Product::where('category', 1)->simplePaginate(8);
         } else {
             $data = Product::where('category', 1)->whereJsonContains('subcategory', $subCategoryID)->simplePaginate(8);
         }
