@@ -16,6 +16,7 @@ class BankingController extends Controller
         $data = Product::where('category', 1)->simplePaginate(9);
 
         $images = array();
+
         foreach ($data as $key => $value) {
             $files = Storage::files('public/product/image/' . $value->id);
             $count = count($files);
@@ -41,7 +42,14 @@ class BankingController extends Controller
             $images[$i] = Storage::url($files[$i - 1]);
         }
 
-        $similarProduct = Product::where('category', $data->category)->where('id', '!=', $data->id)->where('subcategory', $data->subcategory)->paginate(5);
+        $subCategory = $data->subcategory;
+        $subCategory = json_decode($subCategory);
+
+
+        $similarProduct = Product::where('category', $data->category)->where('id', '!=', $data->id)->whereJsonContains('subcategory', $subCategory)->paginate(5);
+
+
+
         $similarProductImages = array();
 
         $brandImagePath = 'public/brand/image/' . $data->brand;
