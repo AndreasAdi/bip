@@ -10,22 +10,14 @@
     @vite('resources/js/app.js')
     @vite('resources/css/loading.min.css')
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <style>
-        .swiper {
-            width: 100%;
-
-
-        }
-    </style>
     <title>PT Bismacindo Perkasa</title>
 </head>
 
 <body>
     <div
-        class="h-screen text-3xl text-black align-middle transition-opacity duration-500 ease-in-out loading animate-fade-in">
+        class="flex flex-col justify-center h-screen text-3xl text-black align-middle transition-opacity duration-500 ease-in-out loading animate-fade-in">
         <div class="flex justify-center">
-            <img src="/images/logobip.webp" alt="" class="w-1/5 ld ld-wander-v">
+            <img src="/images/logobip.webp" alt="" class="w-1/5">
         </div>
         <div class="flex items-center justify-center">
             <svg aria-hidden="true" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -476,7 +468,7 @@
             }
         });
 
-        window.setTimeout(unhide, 5000);
+        window.setTimeout(unhide, 1000);
 
         function unhide() {
             navbar.classList.remove("hidden");
@@ -487,7 +479,6 @@
                 delay: 350,
 
             });
-
 
             var swiper = new Swiper(".mySwiper", {
                 spaceBetween: 0,
