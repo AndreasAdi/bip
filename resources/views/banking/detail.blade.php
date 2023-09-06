@@ -76,7 +76,7 @@
                 @foreach ($similarProduct as $item)
                     <div class="transition-transform ease-in-out hover:scale-105">
                         <figure class="relative">
-                            <a href="/banking/{{ $item->id }}">
+                            <a href="/banking/product/{{ $item->id }}">
                                 <img class="h-auto max-w-full p-5 rounded-lg"
                                     src="{{ $similarProductImages[$loop->index] }}" alt="">
                             </a>
