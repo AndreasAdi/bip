@@ -51,12 +51,13 @@
                                     class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
                                     We provide modern office equipment and furniture & Banking Equipment</h1>
                                 <div class="hidden mt-5 md:flex">
-                                    <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur, adipisicing
-                                        elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis atque ad
-                                        sapiente
-                                        aliquam cupiditate fuga fugiat accusamus totam, et, quaerat tempora. Sed,
-                                        molestias
-                                        dolore?</p>
+                                    <p class="text-base text-white">
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                                        elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis
+                                        atque ad sapiente aliquam cupiditate fuga fugiat accusamus totam, et, quaerat
+                                        tempora. Sed,
+                                        molestias dolore?
+                                    </p>
                                 </div>
                             </div>
                             <div>
@@ -161,7 +162,7 @@
                 <div
                     class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700 ">
 
-                    <img class="rounded-lg group-hover:blur-sm group-hover" src="/images/banking.png" alt="" />
+                    <img class="rounded-lg" src="/images/banking.png" alt="" />
 
                     <a href="/banking"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
@@ -423,6 +424,71 @@
         </div>
     </div>
 
+    <div class="px-5 py-20 lg:px-32">
+        <div data-aos="fade-up">
+            <div class="flex flex-col items-center justify-center mb-10 space-y-2">
+                <div class="text-xl font-bold uppercase text-bip-blue-950">Partner Kami</div>
+                <div class="w-full text-3xl font-bold text-center capitalize">Kami bekerja dengan perusahaan yang luar
+                    biasa</div>
+                <div class="w-1/5 h-2 rounded-lg bg-bip-blue-950"></div>
+            </div>
+        </div>
+
+        <div class="flex my-12 marquee3k" data-aos="fade-up">
+            <div class="flex gap-x-5">
+                <!-- Card 1 -->
+                <div class="flex gap-4 transition-all ease-in-out">
+                    <img src="/images/logo/hp.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/lenovo.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/dell.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/brother.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/benq.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/zyrex.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/asus.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/axioo.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/grgbanking.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+        <div class="flex my-12 marquee3k" data-aos="fade-up" data-reverse="true">
+            <div class="flex">
+                <!-- Card 1 -->
+                <div class="flex gap-4 mx-10 transition-all ease-in-out">
+                    <img src="/images/logo/dynabook.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/tplink.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/cisco.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/kaspersky.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/chubbsafes.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/lionsafe.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/aws.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/microsoft.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                    <img src="/images/logo/adobe.png" alt="Partner"
+                        class="h-20 p-5 bg-white border rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!--Back To Top Button-->
     <button id="back-to-top-button"
         class="fixed hidden px-4 py-4 text-white transition-transform ease-in-out rounded-full focus:scale-75 bg-bip-orange-500 bottom-4 right-4 hover:bg-orange-600">
@@ -455,9 +521,9 @@
         Marquee3k.init({
             selector: 'marquee3k',
         });
-        //document ready
-        window.addEventListener("load", () => {
 
+
+        window.addEventListener("DOMContentLoaded", () => {
             if (window.screen.width < 768) {
 
                 navbar.classList.add("bg-white");
@@ -466,9 +532,25 @@
                 navbar.classList.add("text-base-900");
                 return;
             }
+            const swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+            });
+        })
 
-
-        });
 
         window.addEventListener("scroll", () => {
             if (window.pageYOffset > 0 || window.screen.width < 768) {
@@ -515,24 +597,7 @@
 
             });
 
-            var swiper = new Swiper(".mySwiper", {
-                spaceBetween: 0,
-                centeredSlides: true,
-                loop: true,
-                autoplay: {
-                    speed: 500,
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
+
         }
         backButton.addEventListener("click", () => {
             // Scroll to the top of the page smoothly
