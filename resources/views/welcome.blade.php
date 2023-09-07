@@ -524,6 +524,8 @@
 
 
         window.addEventListener("DOMContentLoaded", () => {
+
+            unhide();
             if (window.screen.width < 768) {
 
                 navbar.classList.add("bg-white");
@@ -575,7 +577,6 @@
             }
         });
 
-        window.onload(unhide());
 
         function unhide() {
             navbar.classList.remove("hidden");
@@ -593,7 +594,8 @@
             }, 500);
 
             AOS.init({
-                delay: 350,
+                delay: 250,
+                once: true
 
             });
 
