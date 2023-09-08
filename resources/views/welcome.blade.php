@@ -503,7 +503,6 @@
         }
     </script>
 
-    @livewireScripts
 </body>
 
 </html>
