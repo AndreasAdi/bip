@@ -359,22 +359,22 @@
                 <div class="flex items-center justify-center gap-x-6">
 
                     <div class="w-48 aspect-h-9">
-                        <img class="grayscale hover:grayscale-0" src="images/logo/bri.png" alt="BRI">
+                        <img class="grayscale hover:grayscale-0" src="images/logo/bri.webp" alt="BRI">
 
                     </div>
                     <div class="w-48 aspect-h-9">
-                        <img class=" grayscale hover:grayscale-0" src="images/logo/mandiri2.png" alt="mandiri">
+                        <img class=" grayscale hover:grayscale-0" src="images/logo/mandiri2.webp" alt="mandiri">
 
                     </div>
                     <div class="w-48 aspect-h-9">
-                        <img class=" grayscale hover:grayscale-0" src="images/logo/btn2.png" alt="btn">
+                        <img class=" grayscale hover:grayscale-0" src="images/logo/btn2.webp" alt="btn">
 
                     </div>
                     <div class="w-48 aspect-h-9">
-                        <img class=" grayscale hover:grayscale-0" src="images/logo/bni.png" alt="bni">
+                        <img class=" grayscale hover:grayscale-0" src="images/logo/bni.webp" alt="bni">
                     </div>
                     <div class="w-48 aspect-h-9">
-                        <img class="grayscale hover:grayscale-0" src="images/logo/mega.png" alt="mega">
+                        <img class="grayscale hover:grayscale-0" src="images/logo/mega.webp" alt="mega">
 
                     </div>
                 </div>
@@ -388,15 +388,15 @@
                 data-speed="2.25">
 
                 <div class="flex items-center">
-                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/permata.png"
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/permata.webp"
                         alt="permata">
-                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/uob.png"
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/uob.webp"
                         alt="uob">
-                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/qnb.png"
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/qnb.webp"
                         alt="qnb">
-                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bca.png"
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bca.webp"
                         alt="bca">
-                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bankdki.png"
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bankdki.webp"
                         alt="bank dki">
 
                 </div>
@@ -443,23 +443,23 @@
             <div class="flex gap-x-5">
                 <!-- Card 1 -->
                 <div class="flex gap-4 transition-all ease-in-out">
-                    <img src="/images/logo/hp.png" alt="Partner"
+                    <img src="/images/logo/hp.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/lenovo.png" alt="Partner"
+                    <img src="/images/logo/lenovo.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/dell.png" alt="Partner"
+                    <img src="/images/logo/dell.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/brother.png" alt="Partner"
+                    <img src="/images/logo/brother.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/benq.png" alt="Partner"
+                    <img src="/images/logo/benq.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/zyrex.png" alt="Partner"
+                    <img src="/images/logo/zyrex.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/asus.png" alt="Partner"
+                    <img src="/images/logo/asus.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/axioo.png" alt="Partner"
+                    <img src="/images/logo/axioo.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/grgbanking.png" alt="Partner"
+                    <img src="/images/logo/grgbanking.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
                 </div>
             </div>
@@ -468,23 +468,23 @@
             <div class="flex">
                 <!-- Card 1 -->
                 <div class="flex gap-4 mx-10 transition-all ease-in-out">
-                    <img src="/images/logo/dynabook.png" alt="Partner"
+                    <img src="/images/logo/dynabook.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/tplink.png" alt="Partner"
+                    <img src="/images/logo/tplink.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/cisco.png" alt="Partner"
+                    <img src="/images/logo/cisco.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/kaspersky.png" alt="Partner"
+                    <img src="/images/logo/kaspersky.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/chubbsafes.png" alt="Partner"
+                    <img src="/images/logo/chubbsafes.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/lionsafe.png" alt="Partner"
+                    <img src="/images/logo/lionsafe.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/aws.png" alt="Partner"
+                    <img src="/images/logo/aws.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/microsoft.png" alt="Partner"
+                    <img src="/images/logo/microsoft.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/adobe.png" alt="Partner"
+                    <img src="/images/logo/adobe.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
                 </div>
             </div>
