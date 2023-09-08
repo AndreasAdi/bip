@@ -43,8 +43,10 @@
     <div class="h-[70vh] md:h-screen swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.webp')]" data-carousel-item>
+                <div class="h-full duration-700 ease-in-out " data-carousel-item>
+
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
+                        <img src="/images/1.webp" alt="" class="absolute top-0 bottom-0 left-0 right-0">
                         <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
                             <div>
                                 <h1
@@ -70,8 +72,10 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.webp')]" data-carousel-item>
+                <div class="h-full duration-700 ease-in-out " data-carousel-item>
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
+                        <img src="/images/1.webp" alt="" class="absolute top-0 bottom-0 left-0 right-0">
+
                         <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
                             <div>
                                 <h1
@@ -96,7 +100,8 @@
                 </div>
             </div>
             <div class="swiper-slide">
-                <div class=" duration-700 ease-in-out h-full bg-[url('/public/images/1.webp')]" data-carousel-item>
+                <div class="h-full duration-700 ease-in-out " data-carousel-item>
+                    <img src="/images/1.webp" alt="" class="absolute top-0 bottom-0 left-0 right-0">
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
                         <div class="relative gap-6 lg:grid lg:grid-cols-2">
                             <div>
