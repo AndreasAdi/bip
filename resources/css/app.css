@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: big_noodle_titling;
+    src: url("./big_noodle_titling.ttf");
+}
+
 .marquee3k__copy {
     padding-right: 30px;
     box-sizing: border-box;

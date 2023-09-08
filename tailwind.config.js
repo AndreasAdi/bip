@@ -14,6 +14,10 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                big_noodle_titling: [
+                    "big_noodle_titling",
+                    ...defaultTheme.fontFamily.sans,
+                ],
             },
             backgroundImage: {
                 slide: "url('/images/1.jpg')",
