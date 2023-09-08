@@ -502,7 +502,7 @@
             });
         }
     </script>
-
+    @livewireScripts
 </body>
 
 </html>
