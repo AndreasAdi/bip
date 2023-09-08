@@ -9,16 +9,21 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
     @vite('resources/css/loading.min.css')
+
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>PT Bismacindo Perkasa</title>
 </head>
 
 
-<div
-    class="fixed top-0 bottom-0 left-0 right-0 z-50 h-screen text-3xl text-black align-middle transition-opacity duration-500 ease-in-out bg-white loading animate-fade-in">
+<div class="fixed top-0 bottom-0 left-0 right-0 z-50 h-screen text-3xl text-black align-middle bg-white loading animate-fade-in"
+    x-data="{ isLoading: true }" x-show="isLoading" x-init="setTimeout(() => isLoading = false, 2000)" x-init="console.log('I can initialize too')"
+    x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 "
+    x-transition:leave-end="opacity-0 ">
     <div class="flex flex-col items-center justify-center w-full h-full">
         <div class="flex justify-center">
-            <img src="/images/logobip.webp" alt="" class="w-1/5">
+            <img src="/images/logobip.webp" alt="" class="w-36">
         </div>
         <div class="flex items-center justify-center">
             <svg aria-hidden="true" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -40,13 +45,15 @@
 
     <x-navbar />
 
-    <div class="h-[70vh] md:h-screen swiper mySwiper">
+    <div style="--swiper-navigation-color: #fe4711; --swiper-pagination-color: #fff;"
+        class="h-[70vh] md:h-screen swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="h-full duration-700 ease-in-out " data-carousel-item>
 
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <img src="/images/1.webp" alt="" class="absolute top-0 bottom-0 left-0 right-0">
+                        <img src="/images/1.webp" alt=""
+                            class="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full">
                         <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
                             <div>
                                 <h1
@@ -74,7 +81,8 @@
             <div class="swiper-slide">
                 <div class="h-full duration-700 ease-in-out " data-carousel-item>
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <img src="/images/1.webp" alt="" class="absolute top-0 bottom-0 left-0 right-0">
+                        <img src="/images/1.webp" alt=""
+                            class="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full">
 
                         <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
                             <div>
@@ -101,7 +109,8 @@
             </div>
             <div class="swiper-slide">
                 <div class="h-full duration-700 ease-in-out " data-carousel-item>
-                    <img src="/images/1.webp" alt="" class="absolute top-0 bottom-0 left-0 right-0">
+                    <img src="/images/1.webp" alt=""
+                        class="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full">
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
                         <div class="relative gap-6 lg:grid lg:grid-cols-2">
                             <div>
@@ -149,7 +158,7 @@
         </div>
 
         <div data-aos="fade-up">
-            <img src="images/section2.jpeg" alt="" class="bg-cover rounded-lg shadow-lg">
+            <img loading="lazy" src="images/section2.jpeg" alt="" class="bg-cover rounded-lg shadow-lg">
 
         </div>
     </div>
@@ -224,120 +233,6 @@
                         </div>
                     </a>
                 </div>
-
-
-
-                {{-- <div class="max-w-sm bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
-
-                    <a href="#">
-                        <img class="rounded-t-lg " src="/images/banking.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="/banking">
-                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Banking
-                                Equipment</h5>
-                        </a>
-
-                        <a href="/banking"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Lihat Produk
-                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="max-w-sm bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    <a href="/it">
-                        <img class="rounded-t-lg" src="/images/it.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">IT
-                                Equipment</h5>
-                        </a>
-
-                        <a href="/it"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Lihat Produk
-                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="max-w-sm bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="/images/office.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Office
-                                Equipment</h5>
-                        </a>
-
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Lihat Produk
-                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="max-w-sm bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="/images/machine.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Machine
-                                Tool</h5>
-                        </a>
-
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Lihat Produk
-                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="max-w-sm bg-white rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="rounded-t-lg" src="/images/certification.png" alt="" />
-                    </a>
-                    <div class="p-5">
-                        <a href="#">
-                            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                Certification
-                            </h5>
-                        </a>
-
-                        <a href="#"
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            Lihat Produk
-                            <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                            </svg>
-                        </a>
-                    </div>
-                </div> --}}
-
             </div>
         </div>
 
@@ -443,23 +338,23 @@
             <div class="flex gap-x-5">
                 <!-- Card 1 -->
                 <div class="flex gap-4 transition-all ease-in-out">
-                    <img src="/images/logo/hp.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/hp.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/lenovo.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/lenovo.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/dell.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/dell.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/brother.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/brother.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/benq.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/benq.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/zyrex.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/zyrex.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/asus.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/asus.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/axioo.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/axioo.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/grgbanking.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/grgbanking.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
                 </div>
             </div>
@@ -468,23 +363,23 @@
             <div class="flex">
                 <!-- Card 1 -->
                 <div class="flex gap-4 mx-10 transition-all ease-in-out">
-                    <img src="/images/logo/dynabook.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/dynabook.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/tplink.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/tplink.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/cisco.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/cisco.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/kaspersky.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/kaspersky.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/chubbsafes.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/chubbsafes.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/lionsafe.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/lionsafe.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/aws.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/aws.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/microsoft.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/microsoft.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                    <img src="/images/logo/adobe.webp" alt="Partner"
+                    <img loading="lazy" src="/images/logo/adobe.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
                 </div>
             </div>
@@ -494,18 +389,31 @@
 
 
 
-    <!--Back To Top Button-->
-    <button id="back-to-top-button"
-        class="fixed hidden px-4 py-4 text-white transition-transform ease-in-out rounded-full focus:scale-75 bg-bip-orange-500 bottom-4 right-4 hover:bg-orange-600">
-        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 14 8">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7" />
-        </svg>
-    </button>
+    <div x-data="{ isBackButtonHidden: window.scrollY <= 120 }">
+        <!--Back To Top Button-->
+        <button x-data="{
+            scrollBack: () => {
+                // Scroll to the top of the page smoothly
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                // Remove focus
+                $refs.backButton.blur();
+            }
+        }" x-on:click="scrollBack()" x-ref="backButton" id="back-to-top-button"
+            @scroll.window="isBackButtonHidden = window.scrollY <= 100" x-bind:class="{ 'hidden': isBackButtonHidden }"
+            class="fixed px-4 py-4 text-white transition-transform ease-in-out rounded-full focus:scale-75 bg-bip-orange-500 bottom-4 right-4 hover:bg-orange-600">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 14 8">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7" />
+            </svg>
+        </button>
+
+    </div>
 
     <x-footer />
-
 
 
 
@@ -521,7 +429,6 @@
         const section2 = document.querySelector("#section2");
         const section3 = document.querySelector("#section3");
         const section4 = document.querySelector("#section4");
-        const backButton = document.querySelector("#back-to-top-button");
 
         Marquee3k.init({
             selector: 'marquee3k',
@@ -543,6 +450,7 @@
                 slidesPerView: 1,
                 spaceBetween: 0,
                 loop: true,
+                effect: "fade",
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
@@ -575,11 +483,7 @@
                 navbar.classList.remove("shadow-lg");
             }
 
-            if (window.scrollY > 100) {
-                backButton.classList.remove("hidden");
-            } else {
-                backButton.classList.add("hidden");
-            }
+
         });
 
 
@@ -591,34 +495,15 @@
             section3.classList.remove("hidden");
             section4.classList.remove("hidden");
 
-            setTimeout(() => {
-                loading.classList.add("opacity-0");
-            }, 1500);
-
-            //wait for the animation to finish
-            setTimeout(() => {
-                loading.classList.add("hidden");
-            }, 500);
-
             AOS.init({
                 delay: 250,
                 once: true
 
             });
-
-
         }
-        backButton.addEventListener("click", () => {
-            // Scroll to the top of the page smoothly
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-            //remove focus
-            backButton.blur();
-        });
     </script>
 
+    @livewireScripts
 </body>
 
 </html>
