@@ -591,7 +591,7 @@
             //wait for the animation to finish
             setTimeout(() => {
                 loading.classList.add("hidden");
-            }, 500);
+            }, 1500);
 
             AOS.init({
                 delay: 250,
