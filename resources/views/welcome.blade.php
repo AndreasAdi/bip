@@ -162,7 +162,7 @@
                 <div
                     class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700 ">
 
-                    <img class="rounded-lg" src="/images/banking.png" alt="" />
+                    <img class="rounded-lg" src="/images/banking.webp" alt="" />
 
                     <a href="/banking"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
@@ -174,7 +174,7 @@
                 <div
                     class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
 
-                    <img class="rounded-lg" src="/images/it.png" alt="" />
+                    <img class="rounded-lg" src="/images/it.webp" alt="" loading="lazy" />
 
                     <a href="/it"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
@@ -186,7 +186,7 @@
                 <div
                     class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
 
-                    <img class="rounded-lg" src="/images/office.png" alt="" />
+                    <img class="rounded-lg" src="/images/office.webp" alt="" loading="lazy" />
 
                     <a href="/office"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
@@ -198,7 +198,7 @@
                 <div
                     class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
 
-                    <img class="rounded-lg" src="/images/machine.png" alt="" />
+                    <img class="rounded-lg" src="/images/machine.webp" alt="" loading="lazy" />
 
                     <a href="/machine"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
@@ -210,7 +210,7 @@
                 <div
                     class="relative max-w-xs overflow-hidden bg-white rounded-lg shadow-lg group dark:bg-gray-800 dark:border-gray-700">
 
-                    <img class="rounded-lg" src="/images/certification.png" alt="" />
+                    <img class="rounded-lg" src="/images/certification.webp" alt="" loading="lazy" />
 
                     <a href="/certification"
                         class="absolute inset-0 z-10 transition-opacity duration-300 bg-black opacity-70 hover:opacity-90 hover:bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500">
