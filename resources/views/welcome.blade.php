@@ -586,12 +586,14 @@
             section3.classList.remove("hidden");
             section4.classList.remove("hidden");
 
-            loading.classList.add("opacity-0");
+            setTimeout(() => {
+                loading.classList.add("opacity-0");
+            }, 1500);
 
             //wait for the animation to finish
             setTimeout(() => {
                 loading.classList.add("hidden");
-            }, 1500);
+            }, 500);
 
             AOS.init({
                 delay: 250,
