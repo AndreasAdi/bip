@@ -2,7 +2,6 @@
     <x-navbar-solid />
     <main class="p-2 py-8 md:px-32">
 
-
         <div class="mt-5">
             <div class="relative w-full h-48 overflow-hidden rounded-lg shadow-xl md:h-80"><img alt="Company Profile"
                     class="absolute inset-0 object-cover w-full h-full" src="/images/company-profile.jpg">

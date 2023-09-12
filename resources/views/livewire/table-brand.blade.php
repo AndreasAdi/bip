@@ -2,14 +2,15 @@
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="">
-                <a href="/admin/brand/insert"
-                    class="inline-flex items-center mb-3 text-white bg-blue-600 border border-transparent focus:outline-none hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <svg class="w-4 h-4 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4zM3 10a7 7 0 1114 0 7 7 0 01-14 0z">
-                        </path>
+                <a href="{{ route('brand.insert') }}"
+                    class="inline-flex items-center px-3 py-2 mb-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg focus:outline-none hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <svg class="w-4 h-4 mr-2 text-white dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 1v16M1 9h16" />
                     </svg>
-                    <span>Add Brand</span>
-                </a>
+                    Add
+                    Brand</a>
                 <div class="mt-5 text-gray-900 dark:text-gray-100">
                     <div class="flex items-center justify-between pb-4">
                         <div>
@@ -126,7 +127,8 @@
                                                         height="48" viewBox="0 0 24 24" fill="none"
                                                         stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                                         stroke-linejoin="round" class="feather feather-frown">
-                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                        <circle cx="12" cy="12" r="10">
+                                                        </circle>
                                                         <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
                                                         <line x1="9" y1="9" x2="9.01"
                                                             y2="9"></line>

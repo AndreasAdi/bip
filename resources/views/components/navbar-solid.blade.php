@@ -3,7 +3,7 @@
             <a href="/" class="flex items-center">
                 <img src="/images/logobip.webp" class="h-8 mr-3" alt="Flowbite Logo" />
 
-                <span class="self-center text-2xl font-semibold whitespace-nowrap">Bismacindo
+                <span class="self-center text-2xl font-semibold whitespace-nowrap">
                 </span>
             </a>
             <div class="flex md:order-2">

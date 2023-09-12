@@ -82,62 +82,6 @@
                 </div>
             @endforeach
 
-
-            {{-- <div class="swiper-slide">
-                <div class="h-full duration-700 ease-in-out " data-carousel-item>
-                    <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <img src="/images/1.webp" alt=""
-                            class="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full">
-
-                        <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
-                            <div>
-                                <h1
-                                    class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
-                                    We provide modern office equipment and furniture & Banking Equipment</h1>
-                                <div class="hidden mt-5 md:flex">
-                                    <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur, adipisicing
-                                        elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis atque ad
-                                        sapiente
-                                        aliquam cupiditate fuga fugiat accusamus totam, et, quaerat tempora. Sed,
-                                        molestias
-                                        dolore?</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img alt="carousel-1"
-                                    class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
-                                    src="images/slide2.svg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="h-full duration-700 ease-in-out " data-carousel-item>
-                    <img src="/images/1.webp" alt=""
-                        class="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full">
-                    <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <div class="relative gap-6 lg:grid lg:grid-cols-2">
-                            <div>
-                                <h1
-                                    class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
-                                    We provide modern office equipment and furniture & Banking Equipment</h1>
-                                <div class="hidden mt-5 md:flex">
-                                    <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur, adipisicing
-                                        elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis atque ad
-                                        sapiente
-                                        aliquam cupiditate fuga fugiat accusamus totam, et, quaerat tempora. Sed,
-                                        molestias
-                                        dolore?</p>
-                                </div>
-                            </div><img alt="carousel-1"
-                                class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
-                                src="https://www.satkomindo.com/assets/image3-bd25cc39.png">
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
