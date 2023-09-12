@@ -70,7 +70,7 @@ Route::get("/dashboard", [ContactController::class, "index"])
     ->name("dashboard");
 
 Route::middleware("auth")->group(function () {
-    Route::get("/admin", [ContactController::class, "index"])->name("admin");
+    Route::get("/admin", [ProductController::class, "index"])->name("admin");
     Route::get("/admin/product/insert", [
         ProductController::class,
         "insert",
