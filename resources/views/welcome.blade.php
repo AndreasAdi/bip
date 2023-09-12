@@ -17,23 +17,24 @@
 </head>
 
 
-<div class="fixed top-0 bottom-0 left-0 right-0 z-50 h-screen text-3xl text-black align-middle bg-white loading animate-fade-in"
+<div class="fixed top-0 bottom-0 left-0 right-0 z-50 h-screen text-3xl text-black align-middle bg-bip-blue-950 loading animate-fade-in"
     x-data="{ isLoading: true }" x-show="isLoading" x-init="setTimeout(() => isLoading = false, 2000)" x-init="console.log('I can initialize too')"
     x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 "
     x-transition:leave-end="opacity-0 ">
     <div class="flex flex-col items-center justify-center w-full h-full">
         <div class="flex justify-center">
-            <img src="/images/logobip.webp" alt="" class="w-36">
+            <img src="/images/logobip.webp" alt="" class="mb-3 w-36">
         </div>
         <div class="flex items-center justify-center">
-            <svg aria-hidden="true" class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            <svg aria-hidden="true"
+                class="w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-bip-orange-600"
                 viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                    fill="currentColor" />
+                    fill="currentColor" stroke="currentColor" stroke-width="2" />
                 <path
                     d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                    fill="currentFill" />
+                    fill="currentFill" stroke="currentFill" stroke-width="2" />
             </svg>
 
         </div>
@@ -48,37 +49,41 @@
     <div style="--swiper-navigation-color: #fe4711; --swiper-pagination-color: #fff;"
         class="h-[70vh] md:h-screen swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="h-full duration-700 ease-in-out " data-carousel-item>
 
-                    <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
-                        <img src="/images/1.webp" alt=""
-                            class="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full">
-                        <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
-                            <div>
-                                <h1
-                                    class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
-                                    We provide modern office equipment and furniture & Banking Equipment</h1>
-                                <div class="hidden mt-5 md:flex">
-                                    <p class="text-base text-white">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                                        elit. Iste perferendis ipsa repellat? Excepturi maxime reiciendis
-                                        atque ad sapiente aliquam cupiditate fuga fugiat accusamus totam, et, quaerat
-                                        tempora. Sed,
-                                        molestias dolore?
-                                    </p>
-                                </div>
+            @foreach ($slides as $item)
+                <div class="swiper-slide">
+                    <div class="h-full duration-700 ease-in-out " data-carousel-item>
+
+                        <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
+                            <div class="absolute top-0 bottom-0 left-0 right-0 z-20 p-0 m-0 bg-bip-blue-950 opacity-70">
                             </div>
-                            <div>
-                                <img alt="carousel-1"
-                                    class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
-                                    src="images/slide1.svg">
+
+                            <img src="{{ asset($item->bg_image) }}" alt=""
+                                class="absolute top-0 bottom-0 left-0 right-0 object-cover w-full h-full blur-sm">
+                            <div class="relative items-center gap-6 md:flex lg:grid lg:grid-cols-2">
+                                <div class="z-30">
+                                    <h1
+                                        class="w-full mt-32 text-xl font-bold text-center text-white uppercase md:mt-16 lg:text-5xl lg:text-left lg:mt-5 drop-shadow-xl">
+                                        {{ $item->title }}</h1>
+                                    <div class="hidden mt-5 md:flex">
+                                        <p class="text-base text-white">
+                                            {{ $item->description }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="z-30">
+                                    <img alt="carousel-1"
+                                        class="h-fit w-full mt-5 mb-32 md:mb-8 lg:mt-0 md:w-[40rem] align-middle"
+                                        src="{{ asset($item->image) }}">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="swiper-slide">
+            @endforeach
+
+
+            {{-- <div class="swiper-slide">
                 <div class="h-full duration-700 ease-in-out " data-carousel-item>
                     <div class="relative flex flex-row items-center justify-center h-full px-12 lg:px-32">
                         <img src="/images/1.webp" alt=""
@@ -131,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
         <div class="swiper-button-next"></div>
@@ -142,11 +147,12 @@
 
     <div class="grid hidden grid-cols-1 gap-6 px-5 py-10 bg-white md:grid-cols-2 md:gap-12 lg:p-32" id="section1">
         <div data-aos="fade-up-right">
-            <div class="text-xl font-bold uppercase text-bip-blue-950">Tentang Bismacindo</div>
+            <div class="text-xl font-bold uppercase text-bip-blue-900">Tentang Bismacindo</div>
             <div class="mt-3 text-3xl font-extrabold text-black capitalize">20 Tahun Pengalaman Dalam Bidang Banking
                 Equipment
             </div>
-            <div class="w-1/6 h-2 mt-2 mb-5 rounded-md bg-bip-blue-950"></div>
+            <div class="w-1/6 h-2 mt-2 mb-5 rounded-md bg-gradient-to-tr from-bip-blue-800 to-bip-blue-900 ">
+            </div>
             <p class="text-justify">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem dolorum a, molestias maiores quam
                 ipsum in

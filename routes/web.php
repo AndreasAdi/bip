@@ -4,9 +4,11 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BankingController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\SlideController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 
 Route::get('/profile', function () {
@@ -58,6 +58,9 @@ Route::post('kirimpesan', [ContactController::class, 'handleKirimPesan'])->name(
 Route::controller(UploadController::class)->group(function () {
     Route::post('/upload', 'store')->name('upload');
     Route::delete('/hapus', 'destroy')->name('hapus');
+
+    Route::post('/uploadbg', 'storebg')->name('uploadbg');
+    Route::delete('/hapusbg', 'destroybg')->name('hapusbg');
 });
 
 // Route::get('/dashboard', function () {
@@ -68,7 +71,7 @@ Route::controller(UploadController::class)->group(function () {
 Route::get('/dashboard', [ContactController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-
+    Route::get('/admin', [ContactController::class, 'index'])->name('admin');
     Route::get('/admin/product/insert', [ProductController::class, 'insert']);
     Route::post('/admin/product/insert', [ProductController::class, 'prosesInsert']);
     Route::get('/admin/product/edit/{id}', [ProductController::class, 'edit']);
@@ -86,6 +89,13 @@ Route::middleware('auth')->group(function () {
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('admin/slide' , [SlideController::class, 'index'])->name('slide');
+    Route::get('admin/slide/create' , [SlideController::class, 'create']);
+    Route::post('admin/slide/store' , [SlideController::class, 'store']);
+    Route::get('admin/slide/edit/{id}' , [SlideController::class, 'edit'])->name('slide.edit');
+    Route::post('admin/slide/update' , [SlideController::class, 'update']);
+    Route::get('admin/slide/delete/{id}' , [SlideController::class, 'delete'])->name('slide.delete');
 });
 
 require __DIR__ . '/auth.php';

@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 dark:bg-gray-800 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
                     <a href="/">
-                        <x-application-logo class="block w-auto text-gray-800 fill-current h-9 dark:text-gray-200" />
+                        <x-application-logo class="block w-auto text-gray-200 fill-current h-9" />
                     </a>
                 </div>
 
@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('brand')" :active="request()->routeIs('brand')">
                         {{ __('Brand') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('slide')" :active="request()->routeIs('slide')">
+                        {{ __('Slide') }}
+                    </x-nav-link>
 
                 </div>
             </div>
@@ -30,7 +33,7 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
-                            class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md dark:text-gray-400 dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none">
+                            class="inline-flex items-center px-3 py-2 text-xl font-medium leading-4 text-white transition duration-150 ease-in-out border border-transparent rounded-md font-big_noodle_titling bg-bip-blue-900 dark:text-gray-400 dark:bg-gray-800 hover:text-white dark:hover:text-gray-300 focus:outline-none">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">

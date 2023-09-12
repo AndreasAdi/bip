@@ -18,6 +18,7 @@ export default {
                     "big_noodle_titling",
                     ...defaultTheme.fontFamily.sans,
                 ],
+                arial_black: ["arial_black", ...defaultTheme.fontFamily.sans],
             },
             backgroundImage: {
                 slide: "url('/images/1.jpg')",

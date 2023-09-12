@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    //this is unused
+    //use livewire component(TableProduct) instead 
     public function index()
     {
         $product = Product::paginate(5);
