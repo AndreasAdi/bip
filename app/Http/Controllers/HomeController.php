@@ -11,8 +11,6 @@ class HomeController extends Controller
     {
         $slides = Slide::all();
 
-    ;
-
-        return view('welcome', compact('slides'));
+        return view("welcome", compact("slides"));
     }
 }

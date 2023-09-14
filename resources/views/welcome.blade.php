@@ -15,8 +15,6 @@
 
     <title>PT Bismacindo Perkasa</title>
 </head>
-
-
 <div class="fixed top-0 bottom-0 left-0 right-0 z-50 h-screen text-3xl text-black align-middle bg-bip-blue-950 loading animate-fade-in"
     x-data="{ isLoading: true }" x-show="isLoading" x-init="setTimeout(() => isLoading = false, 2000)" x-init="console.log('I can initialize too')"
     x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 "
@@ -286,7 +284,7 @@
 
         <div class="flex my-12 marquee3k" data-aos="fade-up">
             <div class="flex gap-x-5">
-                <!-- Card 1 -->
+
                 <div class="flex gap-4 transition-all ease-in-out">
                     <img loading="lazy" src="/images/logo/hp.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">
@@ -311,7 +309,7 @@
         </div>
         <div class="flex my-12 marquee3k" data-aos="fade-up" data-reverse="true">
             <div class="flex">
-                <!-- Card 1 -->
+
                 <div class="flex gap-4 mx-10 transition-all ease-in-out">
                     <img loading="lazy" src="/images/logo/dynabook.webp" alt="Partner"
                         class="h-20 p-5 bg-white border rounded-lg shadow-md">

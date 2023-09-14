@@ -8,7 +8,7 @@
     <main class="py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
 
         <a href="{{ route('slide.create') }}"
-            class="inline-flex items-center px-3 py-2 mb-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg focus:outline-none hover:bg-blue-700 focus:ring-4 focus:ring-blue-500 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            class="inline-flex items-center px-3 py-2 mb-3 text-sm font-medium text-white border border-transparent rounded-lg bg-bip-blue-600 focus:outline-none hover:bg-bip-blue-700 focus:ring-4 focus:ring-bip-blue-500">
             <svg class="w-4 h-4 mr-2 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 fill="none" viewBox="0 0 18 18">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
