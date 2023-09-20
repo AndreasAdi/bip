@@ -241,7 +241,16 @@
                         alt="bca">
                     <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bankdki.webp"
                         alt="bank dki">
-
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/kominfo.webp"
+                        alt="kominfo">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/trans7.webp"
+                        alt="trans7">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/transtv.webp"
+                        alt="transtv">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/telkom.webp"
+                        alt="telkom">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/kpu.webp"
+                        alt="kpu">
                 </div>
 
             </div>
