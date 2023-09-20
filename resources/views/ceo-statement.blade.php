@@ -12,7 +12,7 @@
                 <div class="w-1/4 h-2 bg-white rounded-md"></div>
             </div>
         </div>
-        <section class="min-h-screen my-16">
+        <section class="min-h-screen my-8 md:my-16">
 
             <figure class="max-w-screen-md mx-auto text-center">
                 <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true"
@@ -21,9 +21,11 @@
                         d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
                 </svg>
                 <blockquote>
-                    <p class="italic font-medium text-gray-900 md:text-2xl dark:text-white ">"I am Budi
+                    <p
+                        class="px-4 italic font-medium text-justify text-gray-900 md:text-2xl dark:text-white md:p-0 md:text-center">
+                        "I am Budi
                         Pranoto I am the CEO
-                        of PT Bisma Sindo Perkasa established September 23,
+                        of PT Bismacindo Perkasa established September 23,
                         2000. September 2000 where bismacindo actually stands for Indonesian powerful
                         machine business so our business runs out of high quality modern automatic machine
                         machines but at a reasonable price the product package that we sell we focus on
@@ -36,7 +38,7 @@
                         mal scanners division is also usually used in corporate hippmal in banks in the Corona
                         pandemic situation."</p>
                 </blockquote>
-                <figcaption class="flex flex-col items-center justify-center mt-6 space-x-3 md:flex-row">
+                <figcaption class="flex flex-col items-center justify-center my-6 space-x-3 md:flex-row">
                     <img class="w-24 h-24 mb-2 rounded-full md:mb-0 md:w-12 md:h-12" src="/images/ceo.png"
                         alt="profile picture">
                     <div class="flex flex-col items-center md:divide-x-2 md:divide-gray-500 dark:divide-gray-700">
@@ -46,6 +48,25 @@
                     </div>
                 </figcaption>
             </figure>
+
+            <div class="flex flex-wrap content-center justify-center gap-5 mt-10">
+                <iframe width="360" height="203" class="rounded-md"
+                    src="https://www.youtube.com/embed/kD5KmhrlTR8?si=ZZp8W95yOHQk4_pD" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe width="360" height="203" class="rounded-md"
+                    src="https://www.youtube.com/embed/M7GnPakDEk8?si=Yb3biv-gQAk21sSi" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <iframe width="360" height="203" class="rounded-md"
+                    src="https://www.youtube.com/embed/HU-YN-MljPA?si=4jPIIVYYFLjZtKh7" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+
 
         </section>
     </main>

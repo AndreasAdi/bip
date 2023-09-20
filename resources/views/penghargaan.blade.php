@@ -12,12 +12,20 @@
                 <div class="w-1/4 h-2 bg-white rounded-md"></div>
             </div>
         </div>
-        <section class="my-16 ">
+        <section class="my-16">
 
             <figure class="max-w-screen-md mx-auto text-center">
                 <img src="/images/penghargaan.png" alt="" />
             </figure>
 
+            <div class="flex flex-wrap items-center justify-center gap-2 p-5 mt-5">
+                <figure class="max-w-screen-md mx-auto text-center w-[500px]">
+                    <img src="/images/penghargaan2.png" alt="" />
+                </figure>
+                <figure class="max-w-screen-md mx-auto text-center w-[500px]">
+                    <img src="/images/penghargaan3.png" alt="" />
+                </figure>
+            </div>
         </section>
     </main>
 
