@@ -31,7 +31,7 @@
 4.  Copy .env.example to .env and configure your environment variables :
 
     ```
-    php artisan key:generate
+    cp .env.example .env
     ```
 
 5.  Generate a new application key:
