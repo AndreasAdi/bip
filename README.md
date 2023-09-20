@@ -22,7 +22,7 @@
 
 2.  Navigate to the project folder:
     ```bash
-    cd your-project-name
+    cd bip
     ```
 3.  Install composer dependencies:
     ```
