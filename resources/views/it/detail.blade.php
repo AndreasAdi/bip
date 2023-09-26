@@ -1,7 +1,7 @@
 <x-main>
     <x-navbar-solid />
 
-    <x-navbar-solid />
+
     <main>
         <div class="grid grid-cols-1 gap-6 px-5 py-5 md:grid-cols-2 md:gap-12 lg:px-32 lg:py-16">
             <div>

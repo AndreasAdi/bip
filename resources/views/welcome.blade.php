@@ -195,10 +195,10 @@
                 <div class="w-1/5 h-2 rounded-lg bg-bip-blue-950"></div>
             </div>
         </div>
-
+        {{--
         <div class="flex my-12 marquee3k" data-aos="fade-up">
-            <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 " data-speed="2.25"
-                data-reverse="true">
+            <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 "
+                data-speed="2.25">
                 <div class="flex items-center justify-center gap-x-6">
 
                     <div class="w-48 aspect-h-9">
@@ -223,8 +223,28 @@
                 </div>
 
             </div>
-        </div>
+        </div> --}}
 
+
+        <div class="flex mt-8 marquee3k" data-aos="fade-up">
+            <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 "
+                data-speed="2.25">
+
+                <div class="flex items-center">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bri.webp"
+                        alt="bri">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/mandiri2.webp"
+                        alt="mandiri">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/btn2.webp"
+                        alt="btn">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/bni.webp"
+                        alt="bni">
+                    <img class="h-16 px-5 py-2 mx-5 grayscale hover:grayscale-0" src="images/logo/mega.webp"
+                        alt="mega">
+                </div>
+
+            </div>
+        </div>
 
         <div class="flex mt-8 marquee3k" data-reverse="true" data-aos="fade-up">
             <div class="flex flex-wrap items-center content-center justify-center gap-x-16 gap-y-4 "

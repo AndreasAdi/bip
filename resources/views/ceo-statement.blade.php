@@ -53,17 +53,17 @@
                 <iframe width="360" height="203" class="rounded-md"
                     src="https://www.youtube.com/embed/kD5KmhrlTR8?si=ZZp8W95yOHQk4_pD" title="YouTube video player"
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; "
                     allowfullscreen></iframe>
                 <iframe width="360" height="203" class="rounded-md"
                     src="https://www.youtube.com/embed/M7GnPakDEk8?si=Yb3biv-gQAk21sSi" title="YouTube video player"
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                     allowfullscreen></iframe>
                 <iframe width="360" height="203" class="rounded-md"
                     src="https://www.youtube.com/embed/HU-YN-MljPA?si=4jPIIVYYFLjZtKh7" title="YouTube video player"
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; "
                     allowfullscreen></iframe>
             </div>
 

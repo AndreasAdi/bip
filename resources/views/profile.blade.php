@@ -22,20 +22,22 @@
         </div> --}}
 
 
-        <div class="my-6 md:my-16 ">
+        {{-- <div class="my-6 md:my-16 ">
             <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
                 src="https://heyzine.com/flip-book/46977bdba8.html" style=" width: 100%; height: 100vh;"></iframe>
-        </div>
+        </div> --}}
+
+        <iframe class="w-full h-screen my-6 " src='https://online.pubhtml5.com/boilv/dyyd/' seamless='seamless'
+            scrolling='no' frameborder='0' allowtransparency='true' allowfullscreen='true'></iframe>
+
 
     </main>
 
 
     <x-footer />
 
-    {{--
 
-    <iframe style='width:900px;height:500px' src='https://online.pubhtml5.com/boilv/tnct/' seamless='seamless'
-        scrolling='no' frameborder='0' allowtransparency='true' allowfullscreen='true'></iframe> --}}
+
 
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

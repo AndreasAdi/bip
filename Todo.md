@@ -1,6 +1,7 @@
 TODO
 
-PROGRES
+-   make katalog source dynamic
+    PROGRES
 
 DONE
 

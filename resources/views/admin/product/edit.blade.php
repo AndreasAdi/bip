@@ -89,10 +89,10 @@
                 <input type="file" multiple data-allow-reorder="true" data-max-file-size="3MB"
                     data-max-files="5"class="filepond" name="image" id="image">
             </div>
-            <div class="flex gap-2 mb-6">
+            <div class="flex flex-wrap gap-4 mb-6">
                 @foreach ($images as $image)
                     <div class="flex flex-col">
-                        <img src="{{ $image }}" alt="" class="w-64 h-64" />
+                        <img src="{{ $image }}" alt="" class="object-scale-down w-64 h-64" />
                         <a class="w-full py-1 text-center text-white bg-red-500 rounded-b-md"
                             href="/admin/product/delete/image/{{ $product->id . '/' . $loop->index }}">Hapus</a>
                     </div>
