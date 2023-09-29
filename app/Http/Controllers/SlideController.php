@@ -59,7 +59,7 @@ class SlideController extends Controller
                 ->where("image", $tempFilename[$i])
                 ->first();
 
-            if ($temporaryImage) {
+            if ($temporaryImage != null) {
                 $path =
                     storage_path() .
                     "/app/files/tmp/" .
@@ -71,19 +71,19 @@ class SlideController extends Controller
 
                     $ext = pathinfo(
                         storage_path() .
-                            "/app/files/tmp/" .
-                            $temporaryImage->folder .
-                            "/" .
-                            $temporaryImage->image,
+                        "/app/files/tmp/" .
+                        $temporaryImage->folder .
+                        "/" .
+                        $temporaryImage->image,
                         PATHINFO_EXTENSION
                     );
 
                     try {
                         Storage::move(
                             "files/tmp/" .
-                                $temporaryImage->folder .
-                                "/" .
-                                $temporaryImage->image,
+                            $temporaryImage->folder .
+                            "/" .
+                            $temporaryImage->image,
                             $newPath . "/image." . $ext
                         );
                     } catch (\Exception $e) {
@@ -108,7 +108,7 @@ class SlideController extends Controller
                 ->where("image", $tempFilenamebg[$i])
                 ->first();
 
-            if ($temporaryImage) {
+            if ($temporaryImage != null) {
                 $path =
                     storage_path() .
                     "/app/files/bgtmp/" .
@@ -120,19 +120,19 @@ class SlideController extends Controller
 
                     $ext = pathinfo(
                         storage_path() .
-                            "/app/files/bgtmp/" .
-                            $temporaryImage->folder .
-                            "/" .
-                            $temporaryImage->image,
+                        "/app/files/bgtmp/" .
+                        $temporaryImage->folder .
+                        "/" .
+                        $temporaryImage->image,
                         PATHINFO_EXTENSION
                     );
 
                     try {
                         Storage::move(
                             "files/bgtmp/" .
-                                $temporaryImage->folder .
-                                "/" .
-                                $temporaryImage->image,
+                            $temporaryImage->folder .
+                            "/" .
+                            $temporaryImage->image,
                             $newPath . "/bgimage." . $ext
                         );
                     } catch (\Exception $e) {
@@ -228,19 +228,19 @@ class SlideController extends Controller
 
                         $ext = pathinfo(
                             storage_path() .
-                                "/app/files/tmp/" .
-                                $temporaryImage->folder .
-                                "/" .
-                                $temporaryImage->image,
+                            "/app/files/tmp/" .
+                            $temporaryImage->folder .
+                            "/" .
+                            $temporaryImage->image,
                             PATHINFO_EXTENSION
                         );
 
                         try {
                             Storage::move(
                                 "files/tmp/" .
-                                    $temporaryImage->folder .
-                                    "/" .
-                                    $temporaryImage->image,
+                                $temporaryImage->folder .
+                                "/" .
+                                $temporaryImage->image,
                                 $newPath . "/image." . $ext
                             );
                         } catch (\Exception $e) {
@@ -293,19 +293,19 @@ class SlideController extends Controller
 
                         $ext = pathinfo(
                             storage_path() .
-                                "/app/files/bgtmp/" .
-                                $temporaryImage->folder .
-                                "/" .
-                                $temporaryImage->image,
+                            "/app/files/bgtmp/" .
+                            $temporaryImage->folder .
+                            "/" .
+                            $temporaryImage->image,
                             PATHINFO_EXTENSION
                         );
 
                         try {
                             Storage::move(
                                 "files/bgtmp/" .
-                                    $temporaryImage->folder .
-                                    "/" .
-                                    $temporaryImage->image,
+                                $temporaryImage->folder .
+                                "/" .
+                                $temporaryImage->image,
                                 $newPath . "/bgimage." . $ext
                             );
                         } catch (\Exception $e) {

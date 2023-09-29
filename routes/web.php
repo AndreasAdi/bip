@@ -9,6 +9,7 @@ use App\Http\Controllers\ItController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SlideController;
+use App\Http\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,10 @@ Route::get("penghargaan", function () {
     return view("penghargaan");
 });
 
+Route::get("katalog", function () {
+    return view("katalog");
+});
+
 Route::get("/banking", [BankingController::class, "index"]);
 
 Route::get("/banking/list/{id}", [BankingController::class, "list"]);
@@ -69,9 +74,9 @@ Route::controller(UploadController::class)->group(function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get("/dashboard", [ContactController::class, "index"])
-    ->middleware(["auth", "verified"])
-    ->name("dashboard");
+Route::get("/admin/message", [ContactController::class, "index"])
+    ->middleware(["auth"])
+    ->name("message");
 
 Route::middleware("auth")->group(function () {
     Route::get("/admin", [ProductController::class, "index"])->name("admin");
@@ -122,6 +127,9 @@ Route::middleware("auth")->group(function () {
         SlideController::class,
         "delete",
     ])->name("slide.delete");
+
+
+    Route::get("admin/subcategory", [SubcategoryController::class, "index"])->name("subcategory");
 });
 
 require __DIR__ . "/auth.php";

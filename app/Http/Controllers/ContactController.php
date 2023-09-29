@@ -8,23 +8,18 @@ use App\Models\Pesan;
 
 class ContactController extends Controller
 {
-
-
     function index()
     {
-        $pesan = Pesan::paginate(5);
-        return view('dashboard', compact('pesan'));
+        return view("admin.pesan.index");
     }
-
-
 
     function handleKirimPesan(Request $request)
     {
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $phone = $request->input('phone');
-        $company = $request->input('company');
-        $message = $request->input('message');
+        $name = $request->input("name");
+        $email = $request->input("email");
+        $phone = $request->input("phone");
+        $company = $request->input("company");
+        $message = $request->input("message");
 
         $pesan = new Pesan();
         $pesan->name = $name;
@@ -35,9 +30,13 @@ class ContactController extends Controller
         $pesan->save();
 
         if ($pesan) {
-            return redirect()->route('contact')->with('success', 'Terima kasih, pesan anda telah terkirim');
+            return redirect()
+                ->route("contact")
+                ->with("success", "Terima kasih, pesan anda telah terkirim");
         } else {
-            return redirect()->route('contact')->with('error', 'Maaf, pesan anda gagal terkirim');
+            return redirect()
+                ->route("contact")
+                ->with("error", "Maaf, pesan anda gagal terkirim");
         }
     }
 }

@@ -8,12 +8,22 @@ use Illuminate\Support\Facades\Storage;
 
 class ItController extends Controller
 {
-    //
-
     function index()
     {
-        $data = Product::where("category", 2)->simplePaginate(9);
+        $data = Product::where("category", 2)->simplePaginate(8);
 
+        $images = $this->getImage($data);
+
+        return view("it.index", compact("data", "images"));
+    }
+
+    function detail()
+    {
+        return view("it.detail");
+    }
+
+    public function getImage($data)
+    {
         $images = [];
 
         foreach ($data as $key => $value) {
@@ -24,12 +34,6 @@ class ItController extends Controller
                 $images[$key][$i] = Storage::url($files[$i - 1]);
             }
         }
-
-        return view("it.index", compact("data", "images"));
-    }
-
-    function detail()
-    {
-        return view("it.detail");
+        return $images;
     }
 }

@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function convertYoutube($string)
     {
         return preg_replace(
-            "/[a-zA-Z\/\/:\.]*youtu(?:be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)(?:[&?\/]t=)?(\d*)(?:[a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
+            "/[a-zA-Z\/:.]*youtu(?:be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)(?:[&?\/]t=)?(\d*)[a-zA-Z0-9\/*\-_?&;%=.]*/i",
             "https://www.youtube.com/embed/$1?start=$2",
             $string
         );
@@ -58,34 +58,7 @@ class ProductController extends Controller
         $newProduct->brand = $request->input("brand");
         $newProduct->category = $request->input("category");
 
-        $listSubcategoryRaw = $request->input("subcategory");
-
-        $listSubcategory = [];
-
-        foreach ($request->subcategory as $key => $value) {
-            //check if subcategory exist
-            $subcategory = subcategory::where("id", $value)->first();
-
-            //if not exist add new subcategory
-            if (!$subcategory) {
-                $newSubcategory = new subcategory();
-                $newSubcategory->name = $value;
-                $newSubcategory->category_id = $request->category;
-                $newSubcategory->save();
-                $listSubcategory[$key] = $newSubcategory->id;
-                //remove new subcategory from listSubcategoryRaw
-                unset($listSubcategoryRaw[$key]);
-            }
-        }
-
-        if (count($listSubcategory) > 0) {
-            //merge subcategory and listSubcategory to one array
-            $newProduct->subcategory = json_encode(
-                array_merge($listSubcategoryRaw, $listSubcategory)
-            );
-        } else {
-            $newProduct->subcategory = json_encode($request->subcategory);
-        }
+        $this->saveData($request, $newProduct);
         $newProduct->description = $request->input("description");
         $newProduct->status = "1";
 
@@ -101,43 +74,7 @@ class ProductController extends Controller
                 ->where("image", $tempImage[$i])
                 ->first();
 
-            if ($temporary) {
-                //if exist
-
-                //hapus file and folder temporary
-                $path =
-                    storage_path() .
-                    "/app/files/tmp/" .
-                    $temporary->folder .
-                    "/" .
-                    $temporary->image;
-                if (File::exists($path)) {
-                    //move file to storage/public/product/image/id
-                    $newPath = "public/product/image/" . $newProduct->id;
-
-                    //move file
-                    $ext = explode(".", $temporary->image);
-                    $ext = end($ext);
-                    try {
-                        Storage::move(
-                            "files/tmp/" .
-                                $temporary->folder .
-                                "/" .
-                                $temporary->image,
-                            $newPath . "/" . $i + 1 . "." . $ext
-                        );
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
-
-                    //delete folder temporary
-                    File::delete($path);
-                    rmdir(storage_path("app/files/tmp/" . $temporary->folder));
-
-                    //delete record in temporary table
-                    $temporary->delete();
-                }
-            }
+            $this->saveImage($temporary, $newProduct, $i);
         }
 
         $newProduct->image =
@@ -202,34 +139,7 @@ class ProductController extends Controller
         $product->status = "1";
         $product->video = $this->convertYoutube($request->input("video"));
 
-        $listSubcategoryRaw = $request->input("subcategory");
-
-        $listSubcategory = [];
-
-        foreach ($request->subcategory as $key => $value) {
-            //check if subcategory exist
-            $subcategory = subcategory::where("id", $value)->first();
-
-            //if not exist add new subcategory
-            if (!$subcategory) {
-                $newSubcategory = new subcategory();
-                $newSubcategory->name = $value;
-                $newSubcategory->category_id = $request->category;
-                $newSubcategory->save();
-                $listSubcategory[$key] = $newSubcategory->id;
-                //remove new subcategory from listSubcategoryRaw
-                unset($listSubcategoryRaw[$key]);
-            }
-        }
-
-        if (count($listSubcategory) > 0) {
-            //merge subcategory and listSubcategory to one array
-            $product->subcategory = json_encode(
-                array_merge($listSubcategoryRaw, $listSubcategory)
-            );
-        } else {
-            $product->subcategory = json_encode($request->subcategory);
-        }
+        $this->saveData($request, $product);
 
         $product->save();
 
@@ -250,43 +160,7 @@ class ProductController extends Controller
                 Storage::files("public/product/image/" . $product->id)
             );
 
-            if ($temporary) {
-                //if exist
-
-                //hapus file and folder temporary
-                $path =
-                    storage_path() .
-                    "/app/files/tmp/" .
-                    $temporary->folder .
-                    "/" .
-                    $temporary->image;
-                if (File::exists($path)) {
-                    //move file to storage/public/product/image/id
-                    $newPath = "public/product/image/" . $product->id;
-
-                    //move file
-                    $ext = explode(".", $temporary->image);
-                    $ext = end($ext);
-                    try {
-                        Storage::move(
-                            "files/tmp/" .
-                                $temporary->folder .
-                                "/" .
-                                $temporary->image,
-                            $newPath . "/" . $count + 1 . "." . $ext
-                        );
-                    } catch (\Exception $e) {
-                        echo $e->getMessage();
-                    }
-
-                    //delete folder temporary
-                    File::delete($path);
-                    rmdir(storage_path("app/files/tmp/" . $temporary->folder));
-
-                    //delete record in temporary table
-                    $temporary->delete();
-                }
-            }
+            $this->saveImage($temporary, $product, $count);
         }
 
         return redirect()
@@ -322,5 +196,84 @@ class ProductController extends Controller
         return redirect()
             ->back()
             ->with("success", "Gambar berhasil dihapus");
+    }
+
+    /**
+     * @param Request $request
+     * @param Product $newProduct
+     * @return void
+     */
+    public function saveData(Request $request, Product $newProduct): void
+    {
+        $listSubcategoryRaw = $request->input("subcategory");
+
+        $listSubcategory = [];
+
+        foreach ($request->subcategory as $key => $value) {
+            //check if subcategory exist
+            $subcategory = subcategory::where("id", $value)->first();
+
+            //if not exist add new subcategory
+            if (!$subcategory) {
+                $newSubcategory = new subcategory();
+                $newSubcategory->name = $value;
+                $newSubcategory->category_id = $request->category;
+                $newSubcategory->save();
+                $listSubcategory[$key] = $newSubcategory->id;
+                //remove new subcategory from listSubcategoryRaw
+                unset($listSubcategoryRaw[$key]);
+            }
+        }
+
+        if (count($listSubcategory) > 0) {
+            //merge subcategory and listSubcategory to one array
+            $newProduct->subcategory = json_encode(
+                array_merge($listSubcategoryRaw, $listSubcategory)
+            );
+        } else {
+            $newProduct->subcategory = json_encode($request->subcategory);
+        }
+    }
+
+    /**
+     * @param $temporary
+     * @param Product $newProduct
+     * @param int $i
+     * @return void
+     */
+    public function saveImage($temporary, Product $newProduct, int $i): void
+    {
+        if ($temporary != null) {
+            $path =
+                storage_path() .
+                "/app/files/tmp/" .
+                $temporary->folder .
+                "/" .
+                $temporary->image;
+            if (File::exists($path)) {
+                $newPath = "public/product/image/" . $newProduct->id;
+                $ext = explode(".", $temporary->image);
+                $ext = end($ext);
+                try {
+                    Storage::move(
+                        "files/tmp/" .
+                        $temporary->folder .
+                        "/" .
+                        $temporary->image,
+                        $newPath . "/" . $i + 1 . "." . $ext
+                    );
+                } catch (\Exception $e) {
+                    echo $e->getMessage();
+                }
+
+                //delete folder temporary
+                File::delete($path);
+                rmdir(storage_path("app/files/tmp/" . $temporary->folder));
+
+                //delete record in temporary table
+                $temporary->delete();
+            }
+        }
+
     }
 }

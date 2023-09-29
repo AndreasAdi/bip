@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\TemporaryImage;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
@@ -71,7 +72,7 @@ class BrandController extends Controller
                     $ext = end($ext);
                     try {
                         Storage::move('files/tmp/' . $temporary->folder . '/' . $temporary->image, $newPath . '/' . $i + 1 . '.' . $ext);
-                    } catch (\Exception $e) {
+                    } catch (Exception $e) {
                         echo $e->getMessage();
                     }
 

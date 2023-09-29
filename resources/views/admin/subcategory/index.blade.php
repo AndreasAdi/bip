@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Product') }}
+            {{ __('Sub Kategori') }}
         </h2>
     </x-slot>
 
-    @livewire('table-product')
+    @livewire('table-subcategory')
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
 
             var success = @json(session()->get('success'));
             if (success) {
