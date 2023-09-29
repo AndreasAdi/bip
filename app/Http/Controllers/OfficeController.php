@@ -24,7 +24,7 @@ class OfficeController extends Controller
         $subCategory = subcategory::where("id", $id)->first();
         $subCategoryName = $subCategory->name;
 
-        $data = Product::where("category", 2)
+        $data = Product::where("category", 3)
             ->whereJsonContains("subcategory", $id)
             ->simplePaginate(8);
 
