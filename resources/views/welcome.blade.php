@@ -319,9 +319,9 @@
                      class="h-20 p-5 bg-white border rounded-lg shadow-md">
                 <img loading="lazy" src="{{asset("images/logo/benq.webp")}}" alt="Partner"
                      class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                <img loading="lazy" src="{{asset("images/logo/zyrex.webp")}}}" alt="Partner"
+                <img loading="lazy" src="{{asset("images/logo/zyrex.webp")}}" alt="Partner"
                      class="h-20 p-5 bg-white border rounded-lg shadow-md">
-                <img loading="lazy" src="{{asset("images/logo/asus.webp")}}}" alt="Partner"
+                <img loading="lazy" src="{{asset("images/logo/asus.webp")}}" alt="Partner"
                      class="h-20 p-5 bg-white border rounded-lg shadow-md">
                 <img loading="lazy" src="{{asset("images/logo/axioo.webp")}}" alt="Partner"
                      class="h-20 p-5 bg-white border rounded-lg shadow-md">
