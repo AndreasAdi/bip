@@ -203,8 +203,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 <div class="px-5 py-20" id="section3">
     <div data-aos="fade-up">
@@ -216,8 +214,6 @@
             <div class="h-2 w-1/5 rounded-lg bg-bip-blue-950"></div>
         </div>
     </div>
-
-
     <div class="flex flex-wrap items-center justify-center gap-5 mask">
         <img class="h-24 p-5 border shadow-md" src="{{asset("images/logo/bri.webp")}}"
              alt="bri">

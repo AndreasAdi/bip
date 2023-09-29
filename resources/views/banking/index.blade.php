@@ -35,7 +35,7 @@
                     <div class="relative w-full overflow-hidden rounded-lg shadow-xl h-80 hover:shadow-2xl">
                         <img
                             alt="about-us" class="absolute inset-0 object-cover w-full h-full"
-                            src="{{asset("images/moneycounter.png")}}">
+                            src="{{asset("images/sub/". $item->id.".png")}}">
                         <div class="absolute inset-0 bg-gray-800 bg-opacity-70 "></div>
                         <div class="relative p-4 ">
                             <div class="flex items-center justify-center h-80">
