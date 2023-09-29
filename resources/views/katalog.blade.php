@@ -16,8 +16,10 @@
     }">
 
         <h1 class="mb-5 px-5 py-3 text-3xl font-bold text-white bg-bip-orange-500">KATALOG DIGITAL</h1>
+
+
         <div
-            class="mx-auto  flex max-w-6xl flex-wrap items-center justify-center gap-5 gap-x-12 overflow-hidden rounded-t-md bg-white p-12 drop-shadow-2xl group md:flex-nowrap">
+            class=" mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-5 gap-x-12 rounded-t-md p-12 drop-shadow-2xl  md:flex-nowrap">
 
             {{--            <div class="absolute top-0 left-0">--}}
             {{--                <div class="flex">--}}
@@ -35,8 +37,12 @@
             <div
                 data-rel='fh5-light-box-demo' data-href='https://online.pubhtml5.com/boilv/dyyd/' data-width='1200'
                 data-height='700' data-title='Company Profile'
-                class="w-48 shadow-md shadow-stone-900 drop-shadow-xl transition duration-300 ease-in-out hover:-rotate-3 hover:scale-110 hover:cursor-pointer">
-                <img src="images/cover/1.jpg" alt="Book" class="rounded-sm"/>
+                class="group w-48 shadow-md shadow-stone-900 drop-shadow-xl transition duration-300 ease-in-out hover:-rotate-3 hover:scale-110 hover:cursor-pointer">
+                <div
+                    class="group-hover:bg-gradient-to-br from-bip-orange-400 to-bip-blue-500
+                     transition-colors ease-in-out absolute -inset-1.5  rounded-lg blur-lg"></div>
+                <img src="images/cover/1.jpg" alt="Book" class="group relative rounded-sm"/>
+
             </div>
             <div
                 data-rel='fh5-light-box-demo' data-href='https://online.pubhtml5.com/boilv/beav' data-width='1200'
@@ -145,43 +151,43 @@
 
 
         <!-- Modal -->
-        <div>
+        {{--        <div>--}}
 
-            <div x-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black opacity-80"
-                 x-transition>
-            </div>
-            <div x-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center"
-                 x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
-                 x-transition:enter-end="opacity-100 scale-100"
-                 x-transition:leave="transition ease-in-out duration-300"
-                 x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
-                <!-- Modal content -->
-                <div class="z-50 mx-auto h-screen w-screen rounded bg-white p-5 shadow-lg modal-container">
-                    <!-- Modal body -->
-                    <div class="p-4 modal-body">
-                        <iframe :src="src" seamless='seamless' height="600px" width="1200px"
-                                scrolling='no' frameborder='0' allowtransparency='true' allowfullscreen='true'></iframe>
+        {{--            <div x-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black opacity-80"--}}
+        {{--                 x-transition>--}}
+        {{--            </div>--}}
+        {{--            <div x-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center"--}}
+        {{--                 x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"--}}
+        {{--                 x-transition:enter-end="opacity-100 scale-100"--}}
+        {{--                 x-transition:leave="transition ease-in-out duration-300"--}}
+        {{--                 x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">--}}
+        {{--                <!-- Modal content -->--}}
+        {{--                <div class="z-50 mx-auto h-screen w-screen rounded bg-white p-5 shadow-lg modal-container">--}}
+        {{--                    <!-- Modal body -->--}}
+        {{--                    <div class="p-4 modal-body">--}}
+        {{--                        <iframe :src="src" seamless='seamless' height="600px" width="1200px"--}}
+        {{--                                scrolling='no' frameborder='0' allowtransparency='true' allowfullscreen='true'></iframe>--}}
 
-                        {{--                        <div x-show="showModal" class="h-screen w-screen _df_book" webgl="true" heigth="500"--}}
-                        {{--                             source="pdf/1.pdf" id="df_manual_book">--}}
-                        {{--                        </div>--}}
-
-
-                    </div>
+        {{--                        --}}{{--                        <div x-show="showModal" class="h-screen w-screen _df_book" webgl="true" heigth="500"--}}
+        {{--                        --}}{{--                             source="pdf/1.pdf" id="df_manual_book">--}}
+        {{--                        --}}{{--                        </div>--}}
 
 
-                    <!-- Modal footer -->
-                    <div class="absolute top-2 right-2">
+        {{--                    </div>--}}
 
-                        <button @click="showModal = false"
-                                class="rounded px-4 py-2 font-bold text-white bg-bip-orange-500 hover:bg-bip-orange-600">
-                            Close
-                        </button>
-                    </div>
 
-                </div>
-            </div>
-        </div>
+        {{--                    <!-- Modal footer -->--}}
+        {{--                    <div class="absolute top-2 right-2">--}}
+
+        {{--                        <button @click="showModal = false"--}}
+        {{--                                class="rounded px-4 py-2 font-bold text-white bg-bip-orange-500 hover:bg-bip-orange-600">--}}
+        {{--                            Close--}}
+        {{--                        </button>--}}
+        {{--                    </div>--}}
+
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
 
     </main>
 
