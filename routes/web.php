@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\OfficeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,7 +57,11 @@ Route::get("/banking/list/{id}", [BankingController::class, "list"]);
 Route::get("/product/{id}", [BankingController::class, "detail"]);
 
 Route::get("/it", [ItController::class, "index"]);
-Route::get("/it/1", [ItController::class, "detail"]);
+Route::get("/it/list/{id}", [ItController::class, "list"]);
+
+Route::get("/office", [OfficeController::class, "index"]);
+Route::get("/office/list/{id}", [OfficeController::class, "list"]);
+
 
 Route::post("kirimpesan", [ContactController::class, "handleKirimPesan"])->name(
     "kirim.pesan"

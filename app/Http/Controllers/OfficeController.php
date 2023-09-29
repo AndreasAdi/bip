@@ -7,16 +7,16 @@ use App\Models\subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ItController extends Controller
+class OfficeController extends Controller
 {
     function index()
     {
-        $data = Product::where("category", 2)->simplePaginate(8);
+        $data = Product::where("category", 3)->simplePaginate(8);
 
         $images = $this->getImage($data);
-        $subCategories = subcategory::where("category_id", 2)->get();
+        $subCategories = subcategory::where("category_id", 3)->get();
 
-        return view("it.index", compact("data", "images", "subCategories"));
+        return view("office.index", compact("data", "images", "subCategories"));
     }
 
     function list($id)
@@ -31,7 +31,7 @@ class ItController extends Controller
         $images = $this->getImage($data);
 
         return view(
-            "it.sub",
+            "office.sub",
             compact("data", "images", "subCategoryName")
         );
     }
@@ -39,7 +39,7 @@ class ItController extends Controller
 
     function detail()
     {
-        return view("it.detail");
+        return view("office.detail");
     }
 
     public function getImage($data)

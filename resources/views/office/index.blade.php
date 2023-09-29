@@ -9,7 +9,7 @@
                      src="{{asset("images/company-profile.jpg")}}">
                 <div class="absolute inset-0 bg-gradient-to-tr from-bip-blue-500 to-bip-orange-500/90"></div>
                 <div class="relative flex flex-col items-center justify-center h-full gap-2 p-2 text-center">
-                    <div class="text-4xl font-bold text-white">IT</div>
+                    <div class="text-4xl font-bold text-white">Office</div>
                     <div class="w-1/4 h-2 bg-white rounded-md"></div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                                     <div class="text-xl font-bold text-center text-white">{{$item->name}}</div>
                                     <div class="w-1/3 h-2 bg-white rounded-md"></div>
                                     <div class="flex">
-                                        <a href="/it/list/{{$item->id}}"
+                                        <a href="/office/list/{{$item->id}}"
                                            class="px-2 py-2 mt-4 text-white border-2 border-white rounded-lg cursor-pointer hover:bg-gradient-to-tr from-bip-orange-400 to-bip-orange-500">
                                             Lihat Produk</a>
                                     </div>
